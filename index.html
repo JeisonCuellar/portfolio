@@ -3,458 +3,1108 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Jeison D. Cuellar – Data Analyst Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700&display=swap" rel="stylesheet" />
+<title>Jeison D. Cuellar – Data Analyst</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --bg: #0d0f14; --surface: #141720; --surface2: #1c2030;
-    --border: rgba(255,255,255,0.08); --accent: #5bffc2;
-    --accent2: #a78bfa; --text: #f0f0ef; --muted: #8a8fa8;
-  }
-  body { font-family: 'Syne', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; overflow-x: hidden; }
-  nav {
-    position: sticky; top: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1rem 2rem; background: rgba(13,15,20,0.9);
-    backdrop-filter: blur(12px); border-bottom: 0.5px solid var(--border);
-  }
-  .nav-logo { font-size: 1rem; font-weight: 700; letter-spacing: 0.05em; color: var(--accent); }
-  .nav-links { display: flex; gap: 1.5rem; }
-  .nav-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; cursor: pointer; }
-  .nav-links a:hover { color: var(--text); }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  .hero { min-height: 92vh; display: flex; flex-direction: column; justify-content: center; padding: 5rem 2rem 3rem; position: relative; overflow: hidden; }
-  .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem; max-width: 980px; align-items: center; }
-  .hero-tag { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; }
-  .hero-tag::before { content: ''; display: block; width: 24px; height: 1px; background: var(--accent); }
-  .hero-name { font-family: 'DM Serif Display', serif; font-size: clamp(2.6rem, 5vw, 4.2rem); line-height: 1.05; margin-bottom: 1rem; }
-  .hero-name em { font-style: italic; color: var(--accent2); }
-  .hero-desc { font-size: 0.92rem; color: var(--muted); line-height: 1.85; max-width: 420px; margin-bottom: 2rem; }
-  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
-  .btn { padding: 0.65rem 1.5rem; border-radius: 8px; font-size: 0.78rem; font-family: 'Syne', sans-serif; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.2s; letter-spacing: 0.04em; text-transform: uppercase; border: none; }
-  .btn-primary { background: var(--accent); color: #0d0f14; }
-  .btn-primary:hover { opacity: 0.85; }
-  .btn-ghost { background: transparent; border: 0.5px solid var(--border); color: var(--text); }
-  .btn-ghost:hover { border-color: var(--accent2); color: var(--accent2); }
+:root {
+  --navy: #0f2341;
+  --navy-mid: #1a3a6b;
+  --teal: #1d9e75;
+  --teal-light: #e1f5ee;
+  --teal-mid: #9fe1cb;
+  --slate: #4a5568;
+  --slate-light: #718096;
+  --bg: #fafaf8;
+  --bg2: #f4f3ef;
+  --white: #ffffff;
+  --border: #e2e0d8;
+  --text: #1a1a1a;
+}
 
-  .hero-right { display: flex; flex-direction: column; gap: 0.85rem; }
-  .stat-box { background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; }
-  .stat-num { font-family: 'DM Mono', monospace; font-size: 1.6rem; color: var(--accent); font-weight: 500; }
-  .stat-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px; }
+html { scroll-behavior: smooth; }
 
-  .contact-strip { display: flex; flex-wrap: wrap; gap: 8px; }
-  .contact-item { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--muted); display: flex; align-items: center; gap: 5px; }
-  .contact-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+#geo-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
 
-  section { padding: 4rem 2rem; max-width: 980px; margin: 0 auto; }
-  .section-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; display: flex; align-items: center; gap: 8px; margin-bottom: 0.5rem; }
-  .section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--accent); }
-  .section-title { font-family: 'DM Serif Display', serif; font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: 2.5rem; line-height: 1.2; }
+nav, .hero, section, hr, .contact-section, footer {
+  position: relative;
+  z-index: 1;
+}
 
-  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
-  .skill-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 1.25rem; transition: border-color 0.2s, transform 0.2s; }
-  .skill-card:hover { border-color: var(--accent2); transform: translateY(-2px); }
-  .skill-icon { font-size: 1.3rem; margin-bottom: 0.75rem; }
-  .skill-name { font-size: 0.88rem; font-weight: 600; margin-bottom: 0.35rem; }
-  .skill-desc { font-size: 0.73rem; color: var(--muted); line-height: 1.6; }
-  .skill-bar-wrap { margin-top: 0.75rem; height: 3px; background: var(--border); border-radius: 2px; }
-  .skill-bar { height: 100%; border-radius: 2px; background: var(--accent); }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
 
-  .exp-list { display: flex; flex-direction: column; gap: 1.5rem; }
-  .exp-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 16px; padding: 1.5rem; transition: border-color 0.2s; }
-  .exp-card:hover { border-color: var(--accent); }
-  .exp-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
-  .exp-role { font-size: 0.95rem; font-weight: 700; }
-  .exp-company { font-size: 0.78rem; color: var(--accent2); margin-top: 2px; }
-  .exp-date { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--muted); white-space: nowrap; }
-  .exp-bullets { list-style: none; padding: 0; }
-  .exp-bullets li { font-size: 0.8rem; color: var(--muted); line-height: 1.75; padding-left: 1rem; position: relative; }
-  .exp-bullets li::before { content: '–'; position: absolute; left: 0; color: var(--accent); }
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(250,250,248,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px;
+}
+.nav-logo {
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+}
+.nav-links { display: flex; gap: 2rem; }
+.nav-links a {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--slate);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--navy); }
 
-  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.25rem; }
-  .project-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 16px; padding: 1.5rem; transition: border-color 0.2s, transform 0.2s; position: relative; overflow: hidden; }
-  .project-card:hover { border-color: var(--accent); transform: translateY(-3px); }
-  .project-badge { display: inline-block; font-size: 0.63rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; margin-bottom: 1rem; font-family: 'DM Mono', monospace; }
-  .badge-real { background: rgba(91,255,194,0.12); color: var(--accent); }
-  .badge-demo { background: rgba(167,139,250,0.12); color: var(--accent2); }
-  .project-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
-  .project-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.75; margin-bottom: 1rem; }
-  .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-  .tag { font-family: 'DM Mono', monospace; font-size: 0.63rem; background: rgba(91,255,194,0.06); color: var(--accent); padding: 3px 10px; border-radius: 20px; border: 0.5px solid rgba(91,255,194,0.2); }
-  .tag-purple { background: rgba(167,139,250,0.06); color: var(--accent2); border-color: rgba(167,139,250,0.2); }
+/* HERO */
+.hero {
+  min-height: 88vh;
+  display: flex; align-items: center;
+  padding: 5rem 2.5rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, #e1f5ee 0%, transparent 70%);
+  opacity: 0.7;
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr;
+  gap: 4rem;
+  align-items: center;
+}
+.hero-eyebrow {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 1.5rem;
+}
+.hero-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); }
+.hero-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--teal);
+  text-transform: uppercase;
+}
+.hero-name {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 300;
+  line-height: 1.0;
+  color: var(--navy);
+  letter-spacing: -0.03em;
+  margin-bottom: 0.25rem;
+}
+.hero-name em { font-style: italic; color: var(--teal); }
+.hero-subtitle {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--slate-light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.75rem;
+}
+.hero-bio {
+  font-size: 1rem;
+  color: var(--slate);
+  line-height: 1.8;
+  max-width: 500px;
+  margin-bottom: 2.5rem;
+}
+.hero-contact {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  margin-bottom: 2.5rem;
+}
+.contact-pill {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 0.78rem;
+  color: var(--slate);
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 5px 14px;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+.contact-pill:hover { border-color: var(--teal); color: var(--teal); }
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.7rem 1.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex; align-items: center; gap: 6px;
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
+  border: none;
+}
+.btn-primary { background: var(--navy); color: #fff; }
+.btn-primary:hover { background: var(--navy-mid); }
+.btn-ghost { background: transparent; border: 1px solid var(--border); color: var(--slate); }
+.btn-ghost:hover { border-color: var(--navy); color: var(--navy); }
 
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-  .about-text { font-size: 0.88rem; color: var(--muted); line-height: 1.9; }
-  .about-text p + p { margin-top: 1rem; }
-  .timeline { display: flex; flex-direction: column; gap: 1.25rem; }
-  .tl-item { display: flex; gap: 1rem; }
-  .tl-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); margin-top: 6px; flex-shrink: 0; }
-  .tl-year { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--accent2); margin-bottom: 2px; }
-  .tl-title { font-size: 0.84rem; font-weight: 600; }
-  .tl-sub { font-size: 0.76rem; color: var(--muted); }
+/* HERO STATS */
+.hero-stats { display: flex; flex-direction: column; gap: 1rem; }
+.stat-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  transition: border-color 0.2s;
+}
+.stat-card:hover { border-color: var(--teal-mid); }
+.stat-num {
+  font-family: 'Fraunces', serif;
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--slate-light);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.portfolio-link-badge {
+  background: var(--teal-light);
+  border: 1px solid var(--teal-mid);
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.portfolio-link-badge:hover { background: #c8eede; }
+.portfolio-link-badge span {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #0f6e56;
+}
 
-  .contact-box { background: var(--surface); border: 0.5px solid var(--border); border-radius: 20px; padding: 3rem; display: flex; flex-direction: column; align-items: center; text-align: center; }
-  .contact-headline { font-family: 'DM Serif Display', serif; font-size: clamp(1.4rem, 3vw, 2rem); margin-bottom: 0.75rem; }
-  .contact-sub { font-size: 0.84rem; color: var(--muted); max-width: 380px; margin-bottom: 2rem; line-height: 1.75; }
-  .contact-links { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
-  .contact-link { font-family: 'DM Mono', monospace; font-size: 0.76rem; padding: 0.6rem 1.2rem; border-radius: 8px; border: 0.5px solid var(--border); color: var(--muted); text-decoration: none; transition: all 0.2s; }
-  .contact-link:hover { border-color: var(--accent); color: var(--accent); }
+/* SECTIONS */
+section {
+  padding: 5rem 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.section-header { margin-bottom: 3rem; }
+.section-eyebrow {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 0.5rem;
+}
+.section-line { width: 28px; height: 1.5px; background: var(--teal); }
+.section-label-text {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--teal);
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 300;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  max-width: 1100px;
+  margin: 0 auto;
+}
 
-  footer { text-align: center; padding: 2rem; font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--muted); border-top: 0.5px solid var(--border); }
+/* ACHIEVEMENTS */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.achievement-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem 1.75rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.achievement-card:hover { transform: translateY(-3px); border-color: var(--teal-mid); }
+.achievement-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--teal);
+}
+.achievement-category {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.75rem;
+}
+.achievement-text {
+  font-size: 0.9rem;
+  color: var(--slate);
+  line-height: 1.75;
+}
+.achievement-stat {
+  font-family: 'Fraunces', serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
 
-  .bg-glow { position: fixed; pointer-events: none; border-radius: 50%; filter: blur(80px); opacity: 0.1; }
-  .bg-glow-1 { width: 500px; height: 500px; background: #5bffc2; top: -100px; right: -100px; }
-  .bg-glow-2 { width: 400px; height: 400px; background: #a78bfa; bottom: 20%; left: -150px; }
+/* EXPERIENCE */
+.exp-list { display: flex; flex-direction: column; gap: 0; }
+.exp-card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2.5rem;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+}
+.exp-card:first-child { border-top: 1px solid var(--border); }
+.exp-meta { padding-top: 4px; }
+.exp-period {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--slate-light);
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+.exp-company {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+.exp-location {
+  font-size: 0.76rem;
+  color: var(--slate-light);
+}
+.exp-role {
+  font-family: 'Fraunces', serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+.exp-bullets { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.exp-bullets li {
+  font-size: 0.875rem;
+  color: var(--slate);
+  padding-left: 1.25rem;
+  position: relative;
+  line-height: 1.65;
+}
+.exp-bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 10px;
+  width: 6px; height: 1.5px;
+  background: var(--teal);
+}
 
-  @media (max-width: 680px) {
-    .hero-grid, .about-grid { grid-template-columns: 1fr; }
-    .hero-right { flex-direction: row; flex-wrap: wrap; }
-    .stat-box { flex: 1; min-width: 130px; }
-    nav { padding: 1rem; }
-    .nav-links { gap: 1rem; }
-  }
+/* SKILLS */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.skill-group {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+.skill-group-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.75rem;
+}
+.skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.skill-tag {
+  font-size: 0.78rem;
+  color: var(--navy);
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 10px;
+}
+.skill-tag.highlight {
+  background: var(--teal-light);
+  border-color: var(--teal-mid);
+  color: #0f6e56;
+}
+
+/* RESEARCH */
+.research-featured {
+  background: var(--navy);
+  border-radius: 20px;
+  padding: 2.5rem;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+.research-featured::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 280px; height: 280px;
+  background: radial-gradient(circle, rgba(29,158,117,0.2), transparent 70%);
+  pointer-events: none;
+}
+.research-featured::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: 200px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(167,139,250,0.12), transparent 70%);
+  pointer-events: none;
+}
+.research-tag {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-bottom: 1.25rem;
+  background: rgba(29,158,117,0.2);
+  color: #5bffc2;
+  border: 1px solid rgba(29,158,117,0.3);
+}
+.research-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+  font-weight: 300;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+.research-title em { font-style: italic; color: #5bffc2; }
+.research-problem {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  max-width: 680px;
+}
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.research-pill {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+}
+.research-pill-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 4px;
+}
+.research-pill-value {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+}
+.research-methods {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.research-method {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  background: rgba(29,158,117,0.12);
+  color: #5bffc2;
+  border: 1px solid rgba(29,158,117,0.2);
+  padding: 3px 10px;
+  border-radius: 4px;
+}
+.research-questions {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.75rem;
+}
+.rq-item {
+  display: flex; gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.rq-item:last-child { border-bottom: none; padding-bottom: 0; }
+.rq-item:first-child { padding-top: 0; }
+.rq-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--teal);
+  font-weight: 500;
+  min-width: 28px;
+  padding-top: 2px;
+}
+.rq-text { font-size: 0.875rem; color: var(--slate); line-height: 1.65; }
+
+/* PROJECTS */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+.project-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex; flex-direction: column;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.project-card:hover { border-color: var(--teal-mid); transform: translateY(-2px); }
+.project-badge {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
+  margin-bottom: 1rem;
+  width: fit-content;
+}
+.badge-real { background: var(--teal-light); color: #0f6e56; border: 1px solid var(--teal-mid); }
+.badge-demo { background: #eeedfe; color: #3c3489; border: 1px solid #afa9ec; }
+.project-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+.project-desc { font-size: 0.8rem; color: var(--slate); line-height: 1.7; flex: 1; margin-bottom: 1rem; }
+.project-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.project-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  background: var(--bg2);
+  color: var(--slate);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+/* EDUCATION */
+.edu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+.edu-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.75rem;
+  transition: border-color 0.2s;
+}
+.edu-card:hover { border-color: var(--teal-mid); }
+.edu-degree {
+  font-family: 'Fraunces', serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.edu-school { font-size: 0.85rem; color: var(--teal); font-weight: 500; margin-bottom: 4px; }
+.edu-meta { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--slate-light); }
+
+/* CONTACT */
+.contact-section {
+  background: var(--navy);
+  border-radius: 24px;
+  padding: 4rem 3rem;
+  text-align: center;
+  margin: 0 2.5rem 5rem;
+  max-width: 1100px;
+  margin-left: auto; margin-right: auto;
+  position: relative;
+  overflow: hidden;
+}
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(29,158,117,0.25), transparent 70%);
+  pointer-events: none;
+}
+.contact-headline {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 300;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+.contact-sub { font-size: 0.9rem; color: rgba(255,255,255,0.55); max-width: 380px; margin: 0 auto 2.5rem; line-height: 1.75; }
+.contact-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.contact-link {
+  font-size: 0.82rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.contact-link:hover { border-color: var(--teal); color: #fff; background: rgba(29,158,117,0.15); }
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--slate-light);
+  border-top: 1px solid var(--border);
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-left > * {
+  animation: fadeUp 0.6s ease both;
+}
+.hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+.hero-left > *:nth-child(2) { animation-delay: 0.2s; }
+.hero-left > *:nth-child(3) { animation-delay: 0.25s; }
+.hero-left > *:nth-child(4) { animation-delay: 0.3s; }
+.hero-left > *:nth-child(5) { animation-delay: 0.35s; }
+.hero-left > *:nth-child(6) { animation-delay: 0.4s; }
+
+@media (max-width: 800px) {
+  .hero-inner, .about-grid { grid-template-columns: 1fr; }
+  .hero-stats { flex-direction: row; flex-wrap: wrap; }
+  .stat-card { flex: 1; min-width: 140px; }
+  .achievements-grid, .projects-grid { grid-template-columns: 1fr; }
+  .skills-grid, .edu-grid { grid-template-columns: 1fr; }
+  .exp-card { grid-template-columns: 1fr; gap: 0.5rem; }
+  nav { padding: 0 1.25rem; }
+  .nav-links { gap: 1.25rem; }
+  section { padding: 3.5rem 1.25rem; }
+  .contact-section { margin: 0 1.25rem 4rem; padding: 3rem 1.5rem; }
+}
 </style>
 </head>
 <body>
 
-<div class="bg-glow bg-glow-1"></div>
-<div class="bg-glow bg-glow-2"></div>
+<div id="geo-bg">
+<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1440 900">
+  <defs>
+    <style>
+      .geo { fill: none; stroke-width: 1; }
+      .g1 { stroke: rgba(29,158,117,0.10); }
+      .g2 { stroke: rgba(15,35,65,0.07); }
+      .g3 { fill: rgba(29,158,117,0.04); stroke: none; }
+      .g4 { fill: rgba(15,35,65,0.035); stroke: none; }
+    </style>
+  </defs>
+  <!-- Large circle top right -->
+  <circle class="geo g1" cx="1300" cy="-60" r="320"/>
+  <circle class="geo g1" cx="1300" cy="-60" r="220"/>
+  <!-- Triangle cluster top right -->
+  <polygon class="g3" points="1180,0 1380,0 1280,160"/>
+  <polygon class="g4" points="1300,40 1440,40 1440,200 1370,120"/>
+  <!-- Grid dots top area -->
+  <g class="g1">
+    <circle cx="80" cy="80" r="2" fill="rgba(29,158,117,0.15)" stroke="none"/>
+    <circle cx="120" cy="80" r="2" fill="rgba(29,158,117,0.15)" stroke="none"/>
+    <circle cx="160" cy="80" r="2" fill="rgba(29,158,117,0.15)" stroke="none"/>
+    <circle cx="80" cy="120" r="2" fill="rgba(29,158,117,0.15)" stroke="none"/>
+    <circle cx="120" cy="120" r="2" fill="rgba(29,158,117,0.15)" stroke="none"/>
+    <circle cx="160" cy="120" r="2" fill="rgba(29,158,117,0.15)" stroke="none"/>
+    <circle cx="80" cy="160" r="2" fill="rgba(29,158,117,0.15)" stroke="none"/>
+    <circle cx="120" cy="160" r="2" fill="rgba(29,158,117,0.15)" stroke="none"/>
+    <circle cx="160" cy="160" r="2" fill="rgba(29,158,117,0.15)" stroke="none"/>
+    <circle cx="200" cy="80" r="2" fill="rgba(29,158,117,0.15)" stroke="none"/>
+    <circle cx="200" cy="120" r="2" fill="rgba(29,158,117,0.15)" stroke="none"/>
+    <circle cx="200" cy="160" r="2" fill="rgba(29,158,117,0.15)" stroke="none"/>
+  </g>
+  <!-- Diagonal lines left side -->
+  <line class="geo g2" x1="-40" y1="300" x2="200" y2="60"/>
+  <line class="geo g2" x1="-40" y1="380" x2="240" y2="100"/>
+  <line class="geo g2" x1="-40" y1="460" x2="180" y2="240"/>
+  <!-- Hexagon outline mid left -->
+  <polygon class="geo g1" points="60,500 110,470 160,500 160,560 110,590 60,560"/>
+  <polygon class="geo g2" points="40,490 110,448 180,490 180,572 110,614 40,572"/>
+  <!-- Large triangle bottom right -->
+  <polygon class="g3" points="1200,800 1440,600 1440,900"/>
+  <polygon class="g4" points="1100,900 1440,680 1440,900"/>
+  <!-- Circle bottom left -->
+  <circle class="geo g1" cx="0" cy="900" r="200"/>
+  <circle class="geo g2" cx="0" cy="900" r="280"/>
+  <!-- Small accent squares mid page -->
+  <rect class="g3" x="680" y="380" width="40" height="40" transform="rotate(20,700,400)"/>
+  <rect class="g4" x="720" y="360" width="25" height="25" transform="rotate(45,732,372)"/>
+  <!-- Cross/plus mid right -->
+  <line class="geo g1" x1="1350" y1="450" x2="1350" y2="530"/>
+  <line class="geo g1" x1="1310" y1="490" x2="1390" y2="490"/>
+  <!-- Thin rectangle outline mid area -->
+  <rect class="geo g2" x="20" y="700" width="120" height="60" rx="4"/>
+  <rect class="geo g1" x="35" y="715" width="90" height="30" rx="2"/>
+</svg>
+</div>
 
 <nav>
-  <span class="nav-logo">JDC.</span>
+  <span class="nav-logo">Jeison D. Cuellar</span>
   <div class="nav-links">
-    <a onclick="s('skills')">Skills</a>
-    <a onclick="s('experience')">Experience</a>
-    <a onclick="s('projects')">Projects</a>
-    <a onclick="s('about')">About</a>
-    <a onclick="s('contact')">Contact</a>
+    <a onclick="document.getElementById('achievements').scrollIntoView({behavior:'smooth'})">Achievements</a>
+    <a onclick="document.getElementById('experience').scrollIntoView({behavior:'smooth'})">Experience</a>
+    <a onclick="document.getElementById('research').scrollIntoView({behavior:'smooth'})">Research</a>
+    <a onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">Projects</a>
+    <a onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})">Skills</a>
+    <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</a>
   </div>
 </nav>
 
-<!-- ============================================================
-     HERO — Edit your name, title, and short bio here
-     ============================================================ -->
+<!-- HERO -->
 <div class="hero">
-  <div class="hero-grid">
-    <div>
-      <div class="hero-tag">Data Analyst · Statistician</div>
-      <!-- YOUR NAME -->
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <div class="hero-dot"></div>
+        <span class="hero-tag">Data Analyst · Sydney, AU</span>
+      </div>
       <h1 class="hero-name">Jeison<br><em>D. Cuellar</em></h1>
-      <!-- YOUR BIO (1-2 sentences) -->
-      <p class="hero-desc">Detail-oriented Data Analyst and Statistician with hands-on experience in data validation, CRM analytics, statistical modelling, and cross-system reconciliation. Passionate about turning complex datasets into clear, actionable insights.</p>
-      <!-- CONTACT DETAILS -->
-      <div class="contact-strip">
-        <span class="contact-item"><span class="contact-dot"></span>Sydney, AU</span>
-        <span class="contact-item"><span class="contact-dot"></span>0468-564-509</span>
-        <span class="contact-item"><span class="contact-dot"></span>Jeison.cuellar@hotmail.com</span>
+      <p class="hero-subtitle">Reporting · Data Quality · SQL & Python</p>
+      <p class="hero-bio">Detail-oriented Data Analyst with 2+ years of experience in data cleaning, reporting, and data quality management. Proficient in SQL, Python, and R — transforming raw data into clear, actionable insights that drive business decisions. Currently developing research in digital equity and child vulnerability profiling at Western Sydney University.</p>
+      <div class="hero-contact">
+        <a class="contact-pill" href="mailto:Jeison.cuellar@hotmail.com">✉ Jeison.cuellar@hotmail.com</a>
+        <a class="contact-pill" href="https://www.linkedin.com/in/jeison-cuellar-603a11b3/" target="_blank">↗ LinkedIn</a>
+        <span class="contact-pill">📍 Sydney, AU</span>
       </div>
       <div class="hero-cta">
-        <a class="btn btn-primary" onclick="s('projects')">View Projects</a>
-        <a class="btn btn-ghost" onclick="s('contact')">Get in Touch</a>
+        <a class="btn btn-primary" onclick="document.getElementById('experience').scrollIntoView({behavior:'smooth'})">View Experience ↓</a>
+        <a class="btn btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get in Touch</a>
       </div>
     </div>
-    <!-- STAT BOXES — Change the numbers and labels -->
-    <div class="hero-right">
-      <div class="stat-box">
+    <div class="hero-stats">
+      <div class="stat-card">
         <div class="stat-num">7+</div>
         <div class="stat-label">Years of experience</div>
       </div>
-      <div class="stat-box">
-        <div class="stat-num">4</div>
-        <div class="stat-label">Tools: SQL · Python · R · Excel</div>
+      <div class="stat-card">
+        <div class="stat-num">166%</div>
+        <div class="stat-label">Model output scaled at Nielsen</div>
       </div>
-      <div class="stat-box">
-        <div class="stat-num">3</div>
-        <div class="stat-label">Countries worked in</div>
+      <div class="stat-card">
+        <div class="stat-num">40%</div>
+        <div class="stat-label">Reporting time saved at CPOA</div>
       </div>
+      <a class="portfolio-link-badge" href="https://jeisoncuellar.github.io/portfolio/" target="_blank">
+        <span>↗ View Full Portfolio on GitHub</span>
+      </a>
     </div>
   </div>
 </div>
 
-<!-- ============================================================
-     SKILLS — Add/remove skill cards as needed
-     Each card: icon, name, description, bar width (0–100%)
-     ============================================================ -->
-<section id="skills">
-  <div class="section-label">What I use</div>
-  <h2 class="section-title">Tools & Skills</h2>
-  <div class="skills-grid">
+<hr class="section-divider" />
 
-    <div class="skill-card">
-      <div class="skill-icon">🗄️</div>
-      <div class="skill-name">SQL</div>
-      <div class="skill-desc">SELECT, JOIN, WHERE, GROUP BY, aggregation queries for data validation and reconciliation.</div>
-      <div class="skill-bar-wrap"><div class="skill-bar" style="width:82%"></div></div>
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="section-header">
+    <div class="section-eyebrow">
+      <div class="section-line"></div>
+      <span class="section-label-text">Impact</span>
     </div>
-
-    <div class="skill-card">
-      <div class="skill-icon">🐍</div>
-      <div class="skill-name">Python</div>
-      <div class="skill-desc">Pandas, NumPy for data transformation, integrity checks, and validation workflows.</div>
-      <div class="skill-bar-wrap"><div class="skill-bar" style="width:75%"></div></div>
+    <h2 class="section-title">Key Achievements</h2>
+  </div>
+  <div class="achievements-grid">
+    <div class="achievement-card">
+      <div class="achievement-category">Automation & Efficiency</div>
+      <div class="achievement-stat">166%</div>
+      <p class="achievement-text">Scaled daily model output from 30 to 80/day at Nielsen by automating ANOVA and regression workflows, with VBA macros cutting manual data prep by ~60% and enabling broader product category coverage.</p>
     </div>
-
-    <div class="skill-card">
-      <div class="skill-icon">📊</div>
-      <div class="skill-name">Excel / Power BI</div>
-      <div class="skill-desc">Advanced formulas, VBA, cross-checking, pivot tables, and structured reporting.</div>
-      <div class="skill-bar-wrap"><div class="skill-bar" style="width:85%"></div></div>
+    <div class="achievement-card">
+      <div class="achievement-category">Data Quality & Reporting</div>
+      <div class="achievement-stat">40%</div>
+      <p class="achievement-text">Reduced manual reporting effort at Carbon Positive Australia by integrating and validating WooCommerce and Google Analytics into a single trusted database, with reusable templates the team could use independently.</p>
     </div>
-
-    <div class="skill-card">
-      <div class="skill-icon">📈</div>
-      <div class="skill-name">R</div>
-      <div class="skill-desc">Statistical modelling, latent class analysis, cluster analysis, and validation workflows.</div>
-      <div class="skill-bar-wrap"><div class="skill-bar" style="width:78%"></div></div>
+    <div class="achievement-card">
+      <div class="achievement-category">Stakeholder Insights</div>
+      <div class="achievement-stat">↑</div>
+      <p class="achievement-text">Built donor segmentation profiles by behaviour and motivation, enabling targeted engagement strategies to improve long-term retention across donor categories.</p>
     </div>
-
-    <div class="skill-card">
-      <div class="skill-icon">🔍</div>
-      <div class="skill-name">Data Validation</div>
-      <div class="skill-desc">Data reconciliation, parallel run analysis, variance checks, and quality assurance.</div>
-      <div class="skill-bar-wrap"><div class="skill-bar" style="width:88%"></div></div>
-    </div>
-
-    <div class="skill-card">
-      <div class="skill-icon">📋</div>
-      <div class="skill-name">Statistical Analysis</div>
-      <div class="skill-desc">Regression, ANOVA, time series, latent class and cluster analysis, multivariate methods.</div>
-      <div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div>
-    </div>
-
   </div>
 </section>
 
-<!-- ============================================================
-     EXPERIENCE — Add/remove exp-card blocks
-     ============================================================ -->
+<hr class="section-divider" />
+
+<!-- EXPERIENCE -->
 <section id="experience">
-  <div class="section-label">Work History</div>
-  <h2 class="section-title">Experience</h2>
+  <div class="section-header">
+    <div class="section-eyebrow">
+      <div class="section-line"></div>
+      <span class="section-label-text">Work History</span>
+    </div>
+    <h2 class="section-title">Experience</h2>
+  </div>
   <div class="exp-list">
 
     <div class="exp-card">
-      <div class="exp-header">
-        <div>
-          <div class="exp-role">Consulting Specialist</div>
-          <div class="exp-company">Carbon Positive Australia · Sydney</div>
-        </div>
-        <div class="exp-date">2024 – 2025</div>
+      <div class="exp-meta">
+        <div class="exp-period">2024 – 2025</div>
+        <div class="exp-company">Carbon Positive Australia</div>
+        <div class="exp-location">Sydney, AU</div>
       </div>
-      <ul class="exp-bullets">
-        <li>Analysed CRM donor datasets to segment donors into structured personas based on engagement and lifecycle behaviour.</li>
-        <li>Conducted a full data audit between GA4 and WooCommerce to investigate discrepancies in transaction and conversion data.</li>
-        <li>Performed cross-system reconciliation to validate record counts, revenue totals, and event tracking accuracy.</li>
-        <li>Documented audit findings and transformation logic to support governance and operational clarity.</li>
-      </ul>
+      <div>
+        <div class="exp-role">Data Analyst Consultant</div>
+        <ul class="exp-bullets">
+          <li>Integrated and validated WooCommerce and Google Analytics into a single trusted database, improving data reliability and enabling accurate ongoing reporting</li>
+          <li>Developed reusable reporting templates based on audit findings, allowing the team to work independently after the engagement</li>
+          <li>Built donor segmentation profiles by classifying donors based on behaviour and motivations, enabling targeted engagement strategies</li>
+          <li>Reduced manual reporting effort by ~40% through automated dashboards and reporting processes</li>
+          <li>Applied data quality assurance, validation, and documented data sources to ensure transparency and reliability</li>
+        </ul>
+      </div>
     </div>
 
     <div class="exp-card">
-      <div class="exp-header">
-        <div>
-          <div class="exp-role">Customer Service Operator</div>
-          <div class="exp-company">ITSM · Sydney, Australia</div>
-        </div>
-        <div class="exp-date">2021 – 2025</div>
+      <div class="exp-meta">
+        <div class="exp-period">2021 – 2025</div>
+        <div class="exp-company">ITSM</div>
+        <div class="exp-location">Sydney, AU</div>
       </div>
-      <ul class="exp-bullets">
-        <li>Processed high volumes of service requests via CRM systems with strict accuracy and documentation standards.</li>
-        <li>Performed data validation and record corrections to ensure system accuracy and reporting integrity.</li>
-        <li>Supported internal teams by extracting information, updating spreadsheets, and responding to data requests.</li>
-      </ul>
+      <div>
+        <div class="exp-role">Customer Service Operator (Data & Operations)</div>
+        <ul class="exp-bullets">
+          <li>Managed 80–100+ customer enquiries daily across chat and email while maintaining accurate CRM records</li>
+          <li>Analysed enquiry trends and recurring issues, contributing to process improvements that increased customer satisfaction by 20%</li>
+          <li>Maintained and validated customer data, reducing data entry errors by 30% through improved accuracy controls</li>
+          <li>Supported operational reporting by identifying and resolving inconsistencies in CRM data</li>
+        </ul>
+      </div>
     </div>
 
     <div class="exp-card">
-      <div class="exp-header">
-        <div>
-          <div class="exp-role">Data Analyst</div>
-          <div class="exp-company">Nielsen · Colombia</div>
-        </div>
-        <div class="exp-date">2016 – 2017</div>
+      <div class="exp-meta">
+        <div class="exp-period">Jan – Apr 2023</div>
+        <div class="exp-company">APC Sydney</div>
+        <div class="exp-location">Sydney, AU</div>
       </div>
-      <ul class="exp-bullets">
-        <li>Supported the transition of client reporting from a legacy methodology to a new data collection and estimation framework.</li>
-        <li>Executed parallel validation runs between old and new methodologies to ensure reporting consistency prior to go-live.</li>
-        <li>Automated validation and reporting processes using SQL, R, and advanced Excel.</li>
-      </ul>
+      <div>
+        <div class="exp-role">Data Analysis Intern</div>
+        <ul class="exp-bullets">
+          <li>Contributed to Project Base — development of new recruitment strategies for OzHarvest 'Nourish'</li>
+          <li>Improved engagement among vulnerable youth (aged 15–18) by 20%, contributing to a 5% increase in program impact across rural NSW</li>
+        </ul>
+      </div>
     </div>
 
     <div class="exp-card">
-      <div class="exp-header">
-        <div>
-          <div class="exp-role">Research Assistant</div>
-          <div class="exp-company">Nuevos Rumbos · Colombia</div>
-        </div>
-        <div class="exp-date">2016</div>
+      <div class="exp-meta">
+        <div class="exp-period">2016 – 2017</div>
+        <div class="exp-company">Nielsen</div>
+        <div class="exp-location">Colombia</div>
       </div>
-      <ul class="exp-bullets">
-        <li>Performed statistical analysis using SAS and SPSS on behavioural health datasets.</li>
-        <li>Conducted data cleaning, manipulation, and literature research for applied psychology studies.</li>
-        <li>Worked with sensitive datasets applying data governance, quality control, and ethical research standards.</li>
-      </ul>
+      <div>
+        <div class="exp-role">Data Analyst</div>
+        <ul class="exp-bullets">
+          <li>Scaled model output by 166% (30 to 80/day) by automating ANOVA and regression workflows in R and SQL</li>
+          <li>Reduced manual data prep by ~60% through VBA macros, enabling broader product category coverage daily</li>
+          <li>Delivered sales forecasting reports and analytical presentations to data science and stakeholder teams</li>
+          <li>Collaborated with data science teams to ensure accuracy and alignment across workflows</li>
+        </ul>
+      </div>
     </div>
 
   </div>
 </section>
 
-<!-- ============================================================
-     PROJECTS — Add/remove project-card blocks
-     badge-real = green (real project)
-     badge-demo = purple (demo/practice project)
-     ============================================================ -->
+<hr class="section-divider" />
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="section-header">
+    <div class="section-eyebrow">
+      <div class="section-line"></div>
+      <span class="section-label-text">Current Research</span>
+    </div>
+    <h2 class="section-title">Master of Research</h2>
+  </div>
+
+  <div class="research-featured">
+    <span class="research-tag">In Progress · Western Sydney University</span>
+    <div class="research-title">The Hybrid Digital Agency Index <em>(HDAI)</em></div>
+    <p class="research-problem">
+      Australia became the first country to ban social media for children under 16 — but has no national measure of what digital capability actually looks like in its children, how it develops, or which groups are most at risk. This research builds that measure for the first time, combining longitudinal survey data, Latent Class Analysis, and cross-dataset validation to identify digital vulnerability profiles in Australian children aged 10–15.
+    </p>
+    <div class="research-grid">
+      <div class="research-pill">
+        <div class="research-pill-label">Institution</div>
+        <div class="research-pill-value">Western Sydney University</div>
+      </div>
+      <div class="research-pill">
+        <div class="research-pill-label">Degree</div>
+        <div class="research-pill-value">Master of Research — Social Science</div>
+      </div>
+      <div class="research-pill">
+        <div class="research-pill-label">Data Sources</div>
+        <div class="research-pill-value">LSAC + LSAY (n = 14,000+)</div>
+      </div>
+    </div>
+    <div class="research-methods">
+      <span class="research-method">Latent Class Analysis</span>
+      <span class="research-method">Growth-Curve Modelling</span>
+      <span class="research-method">Composite Index Construction</span>
+      <span class="research-method">Cross-Dataset Validation</span>
+      <span class="research-method">PISA ICT Framework</span>
+      <span class="research-method">R</span>
+      <span class="research-method">Longitudinal Analysis</span>
+    </div>
+  </div>
+
+  <div class="research-questions">
+    <div class="rq-item">
+      <div class="rq-num">RQ1</div>
+      <div class="rq-text">How does digital agency develop across the 10–15 age range in Australian children, and what factors shape it?</div>
+    </div>
+    <div class="rq-item">
+      <div class="rq-num">RQ2</div>
+      <div class="rq-text">What distinct profiles of digital vulnerability emerge when digital agency is combined with socioeconomic status, mental health, and family structure?</div>
+    </div>
+    <div class="rq-item">
+      <div class="rq-num">RQ3</div>
+      <div class="rq-text">Do vulnerability profiles at ages 10–13 predict education and wellbeing outcomes by ages 14–15 and beyond?</div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<!-- PROJECTS -->
 <section id="projects">
-  <div class="section-label">Work Showcase</div>
-  <h2 class="section-title">Projects</h2>
+  <div class="section-header">
+    <div class="section-eyebrow">
+      <div class="section-line"></div>
+      <span class="section-label-text">Work Showcase</span>
+    </div>
+    <h2 class="section-title">Projects</h2>
+  </div>
   <div class="projects-grid">
-
-    <div class="project-card" style="border-color: rgba(91,255,194,0.25);">
-      <span class="project-badge badge-real">Real Project · Universidad Santo Tomás</span>
+    <div class="project-card">
+      <span class="project-badge badge-real">Real · Universidad Santo Tomás</span>
       <div class="project-title">Alcohol Consumption Profiling in Underage Students</div>
-      <div class="project-desc">Applied Latent Class Analysis (LCA) and Cluster Analysis to two national surveys (2008 & 2015, n=14,000+) to identify consumption behaviour profiles in Colombian schoolchildren. Identified four distinct profiles: High Consumption, Selective, Experimental, and Friend-Influenced. Both methods agreed with 80% concordance (Rand criterion).</div>
+      <p class="project-desc">Applied Latent Class Analysis (LCA) and Cluster Analysis to two national surveys (2008 & 2015, n=14,000+) identifying four distinct consumption behaviour profiles. Both methods agreed with 80% concordance (Rand criterion).</p>
       <div class="project-tags">
-        <span class="tag">R</span>
-        <span class="tag">poLCA</span>
-        <span class="tag">Cluster Analysis</span>
-        <span class="tag">MCA</span>
-        <span class="tag">SAS</span>
-        <span class="tag tag-purple">Statistics Degree Project</span>
+        <span class="project-tag">R</span>
+        <span class="project-tag">poLCA</span>
+        <span class="project-tag">Cluster Analysis</span>
+        <span class="project-tag">SAS</span>
+        <span class="project-tag">MCA</span>
       </div>
     </div>
-
-    <div class="project-card">
-      <span class="project-badge badge-real">Real Project · Carbon Positive Australia</span>
-      <div class="project-title">GA4 vs WooCommerce Data Audit</div>
-      <div class="project-desc">Conducted a full cross-system data audit to investigate reporting discrepancies between GA4 and WooCommerce. Reconciled transaction counts, revenue totals, and event tracking. Identified integration sync issues impacting reporting reliability.</div>
-      <div class="project-tags">
-        <span class="tag">Python</span>
-        <span class="tag">Excel</span>
-        <span class="tag">GA4</span>
-        <span class="tag">Data Reconciliation</span>
-        <span class="tag">CRM</span>
+    <div class="project-card" style="border-color: rgba(29,158,117,0.3);">
+      <span class="project-badge badge-real">Real · Carbon Positive Australia</span>
+      <div class="project-title">Rebuilding Reporting Trust After a Data Integration Failure</div>
+      <p class="project-desc"><strong style="color: var(--navy); font-size: 0.78rem;">The problem:</strong> Carbon Positive Australia's revenue and conversion reporting was unreliable — WooCommerce and Google Analytics were out of sync, meaning the team was making fundraising and marketing decisions based on data nobody could fully trust. The root cause had never been investigated.</p>
+      <p class="project-desc" style="margin-top: 0.5rem;"><strong style="color: var(--navy); font-size: 0.78rem;">What I did:</strong> Conducted a full cross-system audit reconciling transaction counts, revenue totals, and event tracking between GA4 and WooCommerce. Identified the integration sync issues causing the discrepancies, validated the corrected data, and built reusable reporting templates the team could use independently — so the fix lasted beyond the engagement.</p>
+      <p class="project-desc" style="margin-top: 0.5rem;"><strong style="color: var(--navy); font-size: 0.78rem;">The outcome:</strong> The organisation gained a single trusted data source for the first time, reducing manual reporting effort by ~40% and giving leadership the confidence to make decisions based on accurate numbers.</p>
+      <div class="project-tags" style="margin-top: 0.75rem;">
+        <span class="project-tag">Python</span>
+        <span class="project-tag">Excel</span>
+        <span class="project-tag">GA4</span>
+        <span class="project-tag">WooCommerce</span>
+        <span class="project-tag">Data Reconciliation</span>
+        <span class="project-tag">Data Governance</span>
+        <span class="project-tag">Reporting Templates</span>
       </div>
     </div>
-
-    <div class="project-card">
-      <span class="project-badge badge-real">Real Project · Nielsen</span>
-      <div class="project-title">Methodology Migration & Parallel Validation</div>
-      <div class="project-desc">Supported migration of client reporting from a legacy methodology to a new framework. Ran parallel validation between old and new systems, performing record count checks, variance analysis, and trend comparison to ensure consistency before go-live.</div>
-      <div class="project-tags">
-        <span class="tag">SQL</span>
-        <span class="tag">R</span>
-        <span class="tag">Excel</span>
-        <span class="tag">Variance Analysis</span>
-        <span class="tag">Reporting</span>
+    <div class="project-card" style="border-color: rgba(29,158,117,0.3);">
+      <span class="project-badge badge-real">Real · Nielsen Colombia</span>
+      <div class="project-title">Protecting Stakeholder Trust During a Methodology Migration</div>
+      <p class="project-desc"><strong style="color: var(--navy); font-size: 0.78rem;">The problem:</strong> When Nielsen migrated its data collection methodology, historical comparisons risked breaking — meaning major FMCG clients could make commercial decisions based on unreliable trend data. The challenge was to validate the new model against the old, identify where discrepancies existed, and keep reporting trustworthy throughout the transition.</p>
+      <p class="project-desc" style="margin-top: 0.5rem;"><strong style="color: var(--navy); font-size: 0.78rem;">What I did:</strong> Built automated ANOVA and regression workflows in R and SQL that ran parallel validation between both methodologies — scaling model output from 30 to 80/day. Used VBA macros to clean and prepare data, expanding coverage across food product categories and enabling the team to deliver consistent forecasts to the data science team without interruption.</p>
+      <p class="project-desc" style="margin-top: 0.5rem;"><strong style="color: var(--navy); font-size: 0.78rem;">The outcome:</strong> Stakeholders received continuous, trustworthy reporting throughout the transition. No decisions were made on unreliable data.</p>
+      <div class="project-tags" style="margin-top: 0.75rem;">
+        <span class="project-tag">R</span>
+        <span class="project-tag">SQL</span>
+        <span class="project-tag">VBA</span>
+        <span class="project-tag">ANOVA</span>
+        <span class="project-tag">Parallel Validation</span>
+        <span class="project-tag">Data Governance</span>
+        <span class="project-tag">Stakeholder Trust</span>
       </div>
     </div>
-
     <div class="project-card">
       <span class="project-badge badge-demo">Demo Project</span>
       <div class="project-title">CRM Donor Segmentation Dashboard</div>
-      <div class="project-desc">Structured persona segmentation of CRM donor data with lifecycle stage mapping and engagement scoring. Designed to be expanded into a Power BI dashboard.</div>
+      <p class="project-desc">Structured persona segmentation of CRM donor data with lifecycle stage mapping and engagement scoring. Designed to be expanded into a Power BI dashboard.</p>
       <div class="project-tags">
-        <span class="tag">Python</span>
-        <span class="tag">Pandas</span>
-        <span class="tag">Power BI</span>
-        <span class="tag">Segmentation</span>
+        <span class="project-tag">Python</span>
+        <span class="project-tag">Pandas</span>
+        <span class="project-tag">Power BI</span>
+        <span class="project-tag">Segmentation</span>
       </div>
     </div>
-
     <div class="project-card">
       <span class="project-badge badge-demo">Demo Project</span>
       <div class="project-title">SQL Data Validation Toolkit</div>
-      <div class="project-desc">A reusable set of SQL validation queries for data migrations — covering duplicate checks, null detection, referential integrity, and row count reconciliation between source and target tables.</div>
+      <p class="project-desc">A reusable set of SQL validation queries for data migrations — covering duplicate checks, null detection, referential integrity, and row count reconciliation between source and target tables.</p>
       <div class="project-tags">
-        <span class="tag">SQL</span>
-        <span class="tag">Data Quality</span>
-        <span class="tag">ETL</span>
-        <span class="tag">Migration</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ============================================================
-     ABOUT — Edit your personal story and timeline
-     ============================================================ -->
-<section id="about">
-  <div class="section-label">Background</div>
-  <h2 class="section-title">About Me</h2>
-  <div class="about-grid">
-    <div class="about-text">
-      <p>I'm Jeison, a Statistician and Data Analyst originally from Colombia, now based in Sydney, Australia. My journey started with a Bachelor's in Statistics at Universidad Santo Tomás, where I specialised in multivariate methods and behavioural data analysis.</p>
-      <p>Over the years I've worked across Colombia and Australia in roles ranging from research statistics to CRM analytics and data migration consulting. I bring a strong process-driven mindset to every dataset I touch.</p>
-      <p>My strength is in making data trustworthy: validating it, reconciling it across systems, and turning it into reporting that stakeholders can actually rely on.</p>
-    </div>
-    <div class="timeline">
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div>
-          <div class="tl-year">2024 – 2025</div>
-          <div class="tl-title">Consulting Specialist</div>
-          <div class="tl-sub">Carbon Positive Australia · Sydney</div>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div>
-          <div class="tl-year">2021 – 2025</div>
-          <div class="tl-title">Customer Service Operator</div>
-          <div class="tl-sub">ITSM · Sydney</div>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div>
-          <div class="tl-year">2022</div>
-          <div class="tl-title">Certificate & Diploma – Market Analysis</div>
-          <div class="tl-sub">Australian Pacific College</div>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div>
-          <div class="tl-year">2016 – 2017</div>
-          <div class="tl-title">Data Analyst</div>
-          <div class="tl-sub">Nielsen · Colombia</div>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div>
-          <div class="tl-year">2016</div>
-          <div class="tl-title">Bachelor's Degree in Statistics</div>
-          <div class="tl-sub">Universidad Santo Tomás · Bogotá</div>
-        </div>
+        <span class="project-tag">SQL</span>
+        <span class="project-tag">Data Quality</span>
+        <span class="project-tag">ETL</span>
+        <span class="project-tag">Migration</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================================================
-     CONTACT — Update your links and email
-     ============================================================ -->
-<section id="contact">
-  <div class="contact-box">
-    <div class="contact-headline">Let's work together</div>
-    <p class="contact-sub">Open to data analyst roles, migration projects, and analytics consulting. Based in Sydney — available immediately.</p>
-    <div class="contact-links">
-      <a class="contact-link" href="mailto:Jeison.cuellar@hotmail.com">📧 Jeison.cuellar@hotmail.com</a>
-      <a class="contact-link" href="https://www.linkedin.com/in/jeison-cuellar-603a11b3/" target="_blank">💼 LinkedIn</a>
-      <a class="contact-link" href="tel:0468564509">📞 0468-564-509</a>
-      <a class="contact-link">📍 Sydney, AU</a>
+<hr class="section-divider" />
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header">
+    <div class="section-eyebrow">
+      <div class="section-line"></div>
+      <span class="section-label-text">Toolkit</span>
+    </div>
+    <h2 class="section-title">Skills</h2>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="skill-group-label">Core Languages & Tools</div>
+      <div class="skill-tags">
+        <span class="skill-tag highlight">SQL</span>
+        <span class="skill-tag highlight">Python</span>
+        <span class="skill-tag highlight">R</span>
+        <span class="skill-tag highlight">Excel</span>
+        <span class="skill-tag">VBA</span>
+        <span class="skill-tag">SAS</span>
+        <span class="skill-tag">SPSS</span>
+        <span class="skill-tag">STATA</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-label">Data Visualisation</div>
+      <div class="skill-tags">
+        <span class="skill-tag highlight">Tableau</span>
+        <span class="skill-tag highlight">Power BI</span>
+        <span class="skill-tag">ggplot2</span>
+        <span class="skill-tag">Shiny</span>
+        <span class="skill-tag">Excel Charts</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-label">Statistical Analysis</div>
+      <div class="skill-tags">
+        <span class="skill-tag">ANOVA</span>
+        <span class="skill-tag">Regression</span>
+        <span class="skill-tag">Time Series</span>
+        <span class="skill-tag">Hypothesis Testing</span>
+        <span class="skill-tag">Cluster Analysis</span>
+        <span class="skill-tag">LCA</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-label">Data & Soft Skills</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Data Validation</span>
+        <span class="skill-tag">Data Auditing</span>
+        <span class="skill-tag">CRM Analytics</span>
+        <span class="skill-tag">Stakeholder Communication</span>
+        <span class="skill-tag">Process Improvement</span>
+      </div>
     </div>
   </div>
 </section>
 
-<footer>Built with data & curiosity · Jeison D. Cuellar · 2026</footer>
+<hr class="section-divider" />
 
-<script>
-  function s(id) {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  }
-</script>
+<!-- EDUCATION -->
+<section>
+  <div class="section-header">
+    <div class="section-eyebrow">
+      <div class="section-line"></div>
+      <span class="section-label-text">Education</span>
+    </div>
+    <h2 class="section-title">Qualifications</h2>
+  </div>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <div class="edu-degree">Bachelor's Degree in Statistics</div>
+      <div class="edu-school">Universidad Santo Tomás</div>
+      <div class="edu-meta">2016 · Bogotá, Colombia</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-degree">Diploma in Project Management</div>
+      <div class="edu-school">Australian Pacific College</div>
+      <div class="edu-meta">2020 · Sydney, AU</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-section" id="contact">
+  <h2 class="contact-headline">Let's work together</h2>
+  <p class="contact-sub">Open to data analyst roles focused on reporting, data quality, and business insights. Based in Sydney — available immediately.</p>
+  <div class="contact-links">
+    <a class="contact-link" href="mailto:Jeison.cuellar@hotmail.com">✉ Jeison.cuellar@hotmail.com</a>
+    <a class="contact-link" href="https://www.linkedin.com/in/jeison-cuellar-603a11b3/" target="_blank">↗ LinkedIn</a>
+    <a class="contact-link" href="https://jeisoncuellar.github.io/portfolio/" target="_blank">↗ GitHub Portfolio</a>
+  </div>
+</div>
+
+<footer>Jeison D. Cuellar · Data Analyst · Sydney, AU · 2026</footer>
+
 </body>
 </html>
