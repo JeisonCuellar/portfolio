@@ -48,7 +48,6 @@ body {
   overflow-x: hidden;
 }
 
-/* NAV */
 nav {
   position: sticky; top: 0; z-index: 100;
   background: rgba(250,250,248,0.92);
@@ -58,571 +57,132 @@ nav {
   display: flex; align-items: center; justify-content: space-between;
   height: 60px;
 }
-.nav-logo {
-  font-family: 'Fraunces', serif;
-  font-size: 1.1rem;
-  color: var(--navy);
-  letter-spacing: -0.02em;
-}
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1.1rem; color: var(--navy); letter-spacing: -0.02em; }
 .nav-links { display: flex; gap: 2rem; }
-.nav-links a {
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: var(--slate);
-  text-decoration: none;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: color 0.2s;
-}
+.nav-links a { font-size: 0.78rem; font-weight: 500; color: var(--slate); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: color 0.2s; }
 .nav-links a:hover { color: var(--navy); }
 
-/* HERO */
-.hero {
-  min-height: 88vh;
-  display: flex; align-items: center;
-  padding: 5rem 2.5rem 4rem;
-  position: relative;
-  overflow: hidden;
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -60px; right: -60px;
-  width: 500px; height: 500px;
-  background: radial-gradient(circle, #e1f5ee 0%, transparent 70%);
-  opacity: 0.7;
-  pointer-events: none;
-}
-.hero-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1.4fr 0.6fr;
-  gap: 4rem;
-  align-items: center;
-}
-.hero-eyebrow {
-  display: flex; align-items: center; gap: 10px;
-  margin-bottom: 1.5rem;
-}
+.hero { min-height: 88vh; display: flex; align-items: center; padding: 5rem 2.5rem 4rem; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: -60px; right: -60px; width: 500px; height: 500px; background: radial-gradient(circle, #e1f5ee 0%, transparent 70%); opacity: 0.7; pointer-events: none; }
+.hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1.4fr 0.6fr; gap: 4rem; align-items: center; }
+.hero-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 1.5rem; }
 .hero-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); }
-.hero-tag {
-  font-family: 'DM Mono', monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  color: var(--teal);
-  text-transform: uppercase;
-}
-.hero-name {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(3rem, 6vw, 5rem);
-  font-weight: 300;
-  line-height: 1.0;
-  color: var(--navy);
-  letter-spacing: -0.03em;
-  margin-bottom: 0.25rem;
-}
+.hero-tag { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.1em; color: var(--teal); text-transform: uppercase; }
+.hero-name { font-family: 'Fraunces', serif; font-size: clamp(3rem, 6vw, 5rem); font-weight: 300; line-height: 1.0; color: var(--navy); letter-spacing: -0.03em; margin-bottom: 0.25rem; }
 .hero-name em { font-style: italic; color: var(--teal); }
-.hero-subtitle {
-  font-family: 'DM Mono', monospace;
-  font-size: 0.78rem;
-  color: var(--slate-light);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 1.75rem;
-}
-.hero-bio {
-  font-size: 1rem;
-  color: var(--slate);
-  line-height: 1.8;
-  max-width: 500px;
-  margin-bottom: 2.5rem;
-}
-.hero-contact {
-  display: flex; flex-wrap: wrap; gap: 12px;
-  margin-bottom: 2.5rem;
-}
-.contact-pill {
-  display: flex; align-items: center; gap: 6px;
-  font-size: 0.78rem;
-  color: var(--slate);
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 100px;
-  padding: 5px 14px;
-  text-decoration: none;
-  transition: border-color 0.2s, color 0.2s;
-}
+.hero-subtitle { font-family: 'DM Mono', monospace; font-size: 0.78rem; color: var(--slate-light); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.75rem; }
+.hero-bio { font-size: 1rem; color: var(--slate); line-height: 1.8; max-width: 500px; margin-bottom: 2.5rem; }
+.hero-contact { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 2.5rem; }
+.contact-pill { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--slate); background: var(--white); border: 1px solid var(--border); border-radius: 100px; padding: 5px 14px; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
 .contact-pill:hover { border-color: var(--teal); color: var(--teal); }
 .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
-.btn {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.82rem;
-  font-weight: 500;
-  padding: 0.7rem 1.75rem;
-  border-radius: 8px;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-flex; align-items: center; gap: 6px;
-  transition: all 0.2s;
-  letter-spacing: 0.02em;
-  border: none;
-}
+.btn { font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 500; padding: 0.7rem 1.75rem; border-radius: 8px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s; letter-spacing: 0.02em; border: none; }
 .btn-primary { background: var(--navy); color: #fff; }
 .btn-primary:hover { background: var(--navy-mid); }
 .btn-ghost { background: transparent; border: 1px solid var(--border); color: var(--slate); }
 .btn-ghost:hover { border-color: var(--navy); color: var(--navy); }
 
-/* HERO STATS */
 .hero-stats { display: flex; flex-direction: column; gap: 1rem; }
-.stat-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 1.25rem 1.5rem;
-  transition: border-color 0.2s;
-}
+.stat-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 1.25rem 1.5rem; transition: border-color 0.2s; }
 .stat-card:hover { border-color: var(--teal-mid); }
-.stat-num {
-  font-family: 'Fraunces', serif;
-  font-size: 2.2rem;
-  font-weight: 300;
-  color: var(--navy);
-  line-height: 1;
-  margin-bottom: 4px;
-}
-.stat-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 0.68rem;
-  color: var(--slate-light);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-.portfolio-link-badge {
-  background: var(--teal-light);
-  border: 1px solid var(--teal-mid);
-  border-radius: 16px;
-  padding: 1rem 1.25rem;
-  display: flex; align-items: center; gap: 10px;
-  text-decoration: none;
-  transition: background 0.2s;
-}
+.stat-num { font-family: 'Fraunces', serif; font-size: 2.2rem; font-weight: 300; color: var(--navy); line-height: 1; margin-bottom: 4px; }
+.stat-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--slate-light); text-transform: uppercase; letter-spacing: 0.08em; }
+.portfolio-link-badge { background: var(--teal-light); border: 1px solid var(--teal-mid); border-radius: 16px; padding: 1rem 1.25rem; display: flex; align-items: center; gap: 10px; text-decoration: none; transition: background 0.2s; }
 .portfolio-link-badge:hover { background: #c8eede; }
-.portfolio-link-badge span {
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: #0f6e56;
-}
+.portfolio-link-badge span { font-size: 0.78rem; font-weight: 500; color: #0f6e56; }
 
-/* SECTIONS */
-section {
-  padding: 5rem 2.5rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
+section { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
 .section-header { margin-bottom: 3rem; }
-.section-eyebrow {
-  display: flex; align-items: center; gap: 10px;
-  margin-bottom: 0.5rem;
-}
+.section-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 0.5rem; }
 .section-line { width: 28px; height: 1.5px; background: var(--teal); }
-.section-label-text {
-  font-family: 'DM Mono', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
-  color: var(--teal);
-  text-transform: uppercase;
-}
-.section-title {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-  font-weight: 300;
-  color: var(--navy);
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-}
-.section-divider {
-  border: none;
-  border-top: 1px solid var(--border);
-  max-width: 1100px;
-  margin: 0 auto;
-}
+.section-label-text { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.12em; color: var(--teal); text-transform: uppercase; }
+.section-title { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 300; color: var(--navy); letter-spacing: -0.02em; line-height: 1.1; }
+.section-divider { border: none; border-top: 1px solid var(--border); max-width: 1100px; margin: 0 auto; }
 
-/* ACHIEVEMENTS */
-.achievements-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-.achievement-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 2rem 1.75rem;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.2s, border-color 0.2s;
-}
+.achievements-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.achievement-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 2rem 1.75rem; position: relative; overflow: hidden; transition: transform 0.2s, border-color 0.2s; }
 .achievement-card:hover { transform: translateY(-3px); border-color: var(--teal-mid); }
-.achievement-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: var(--teal);
-}
-.achievement-category {
-  font-family: 'DM Mono', monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--teal);
-  margin-bottom: 0.75rem;
-}
-.achievement-text {
-  font-size: 0.9rem;
-  color: var(--slate);
-  line-height: 1.75;
-}
-.achievement-stat {
-  font-family: 'Fraunces', serif;
-  font-size: 2rem;
-  font-weight: 300;
-  color: var(--navy);
-  margin-bottom: 0.5rem;
-}
+.achievement-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--teal); }
+.achievement-category { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; }
+.achievement-text { font-size: 0.9rem; color: var(--slate); line-height: 1.75; }
+.achievement-stat { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 300; color: var(--navy); margin-bottom: 0.5rem; }
 
-/* EXPERIENCE */
 .exp-list { display: flex; flex-direction: column; gap: 0; }
-.exp-card {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 2.5rem;
-  padding: 2.5rem 0;
-  border-bottom: 1px solid var(--border);
-  transition: background 0.2s;
-}
+.exp-card { display: grid; grid-template-columns: 200px 1fr; gap: 2.5rem; padding: 2.5rem 0; border-bottom: 1px solid var(--border); transition: background 0.2s; }
 .exp-card:first-child { border-top: 1px solid var(--border); }
 .exp-meta { padding-top: 4px; }
-.exp-period {
-  font-family: 'DM Mono', monospace;
-  font-size: 0.72rem;
-  color: var(--slate-light);
-  letter-spacing: 0.06em;
-  margin-bottom: 6px;
-}
-.exp-company {
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--navy);
-  margin-bottom: 2px;
-}
-.exp-location {
-  font-size: 0.76rem;
-  color: var(--slate-light);
-}
-.exp-role {
-  font-family: 'Fraunces', serif;
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: var(--navy);
-  margin-bottom: 0.75rem;
-  letter-spacing: -0.01em;
-}
+.exp-period { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--slate-light); letter-spacing: 0.06em; margin-bottom: 6px; }
+.exp-company { font-size: 0.82rem; font-weight: 500; color: var(--navy); margin-bottom: 2px; }
+.exp-location { font-size: 0.76rem; color: var(--slate-light); }
+.exp-role { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 400; color: var(--navy); margin-bottom: 0.75rem; letter-spacing: -0.01em; }
 .exp-bullets { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; }
-.exp-bullets li {
-  font-size: 0.875rem;
-  color: var(--slate);
-  padding-left: 1.25rem;
-  position: relative;
-  line-height: 1.65;
-}
-.exp-bullets li::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 10px;
-  width: 6px; height: 1.5px;
-  background: var(--teal);
-}
+.exp-bullets li { font-size: 0.875rem; color: var(--slate); padding-left: 1.25rem; position: relative; line-height: 1.65; }
+.exp-bullets li::before { content: ''; position: absolute; left: 0; top: 10px; width: 6px; height: 1.5px; background: var(--teal); }
 
-/* SKILLS */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-.skill-group {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.5rem;
-}
-.skill-group-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--teal);
-  margin-bottom: 0.75rem;
-}
+.additional-exp { margin-top: 1.5rem; padding: 1.5rem; background: var(--bg2); border-radius: 12px; border: 1px solid var(--border); }
+.additional-exp-label { font-family: 'DM Mono', monospace; font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate-light); margin-bottom: 0.5rem; }
+.additional-exp-role { font-size: 0.88rem; color: var(--navy); font-weight: 500; }
+.additional-exp-note { font-size: 0.82rem; color: var(--slate); margin-top: 4px; line-height: 1.6; }
+
+.skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+.skill-group { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+.skill-group-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; }
 .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-.skill-tag {
-  font-size: 0.78rem;
-  color: var(--navy);
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 4px 10px;
-}
-.skill-tag.highlight {
-  background: var(--teal-light);
-  border-color: var(--teal-mid);
-  color: #0f6e56;
-}
+.skill-tag { font-size: 0.78rem; color: var(--navy); background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; }
+.skill-tag.highlight { background: var(--teal-light); border-color: var(--teal-mid); color: #0f6e56; }
 
-/* RESEARCH */
-.research-featured {
-  background: var(--navy);
-  border-radius: 20px;
-  padding: 2.5rem;
-  color: #fff;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 1.5rem;
-}
-.research-featured::before {
-  content: '';
-  position: absolute;
-  top: -80px; right: -80px;
-  width: 280px; height: 280px;
-  background: radial-gradient(circle, rgba(29,158,117,0.2), transparent 70%);
-  pointer-events: none;
-}
-.research-featured::after {
-  content: '';
-  position: absolute;
-  bottom: -60px; left: 200px;
-  width: 200px; height: 200px;
-  background: radial-gradient(circle, rgba(167,139,250,0.12), transparent 70%);
-  pointer-events: none;
-}
-.research-tag {
-  display: inline-block;
-  font-family: 'DM Mono', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 4px 12px;
-  border-radius: 100px;
-  margin-bottom: 1.25rem;
-  background: rgba(29,158,117,0.2);
-  color: #5bffc2;
-  border: 1px solid rgba(29,158,117,0.3);
-}
-.research-title {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(1.2rem, 2.5vw, 1.7rem);
-  font-weight: 300;
-  color: #fff;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.75rem;
-  line-height: 1.2;
-}
+.research-featured { background: var(--navy); border-radius: 20px; padding: 2.5rem; color: #fff; position: relative; overflow: hidden; margin-bottom: 1.5rem; }
+.research-featured::before { content: ''; position: absolute; top: -80px; right: -80px; width: 280px; height: 280px; background: radial-gradient(circle, rgba(29,158,117,0.2), transparent 70%); pointer-events: none; }
+.research-featured::after { content: ''; position: absolute; bottom: -60px; left: 200px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(167,139,250,0.12), transparent 70%); pointer-events: none; }
+.research-tag { display: inline-block; font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; margin-bottom: 1.25rem; background: rgba(29,158,117,0.2); color: #5bffc2; border: 1px solid rgba(29,158,117,0.3); }
+.research-tag.proposal { background: rgba(167,139,250,0.15); color: #cbb9ff; border: 1px solid rgba(167,139,250,0.3); }
+.research-title { font-family: 'Fraunces', serif; font-size: clamp(1.2rem, 2.5vw, 1.7rem); font-weight: 300; color: #fff; letter-spacing: -0.02em; margin-bottom: 0.75rem; line-height: 1.2; }
 .research-title em { font-style: italic; color: #5bffc2; }
-.research-problem {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.6);
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-  max-width: 680px;
-}
-.research-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-.research-pill {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 10px;
-  padding: 0.85rem 1rem;
-}
-.research-pill-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 0.62rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
-  margin-bottom: 4px;
-}
-.research-pill-value {
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: rgba(255,255,255,0.85);
-}
-.research-methods {
-  display: flex; flex-wrap: wrap; gap: 6px;
-}
-.research-method {
-  font-family: 'DM Mono', monospace;
-  font-size: 0.62rem;
-  background: rgba(29,158,117,0.12);
-  color: #5bffc2;
-  border: 1px solid rgba(29,158,117,0.2);
-  padding: 3px 10px;
-  border-radius: 4px;
-}
-.research-questions {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 1.75rem;
-}
-.rq-item {
-  display: flex; gap: 1rem;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--border);
-}
+.research-problem { font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.8; margin-bottom: 1.5rem; max-width: 680px; }
+.research-note { font-size: 0.78rem; color: rgba(255,255,255,0.45); line-height: 1.7; margin-bottom: 1.5rem; max-width: 680px; font-style: italic; }
+.research-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
+.research-pill { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 0.85rem 1rem; }
+.research-pill-label { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 4px; }
+.research-pill-value { font-size: 0.82rem; font-weight: 500; color: rgba(255,255,255,0.85); }
+.research-methods { display: flex; flex-wrap: wrap; gap: 6px; }
+.research-method { font-family: 'DM Mono', monospace; font-size: 0.62rem; background: rgba(29,158,117,0.12); color: #5bffc2; border: 1px solid rgba(29,158,117,0.2); padding: 3px 10px; border-radius: 4px; }
+.research-questions { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; }
+.rq-item { display: flex; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--border); }
 .rq-item:last-child { border-bottom: none; padding-bottom: 0; }
 .rq-item:first-child { padding-top: 0; }
-.rq-num {
-  font-family: 'DM Mono', monospace;
-  font-size: 0.72rem;
-  color: var(--teal);
-  font-weight: 500;
-  min-width: 28px;
-  padding-top: 2px;
-}
+.rq-num { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--teal); font-weight: 500; min-width: 28px; padding-top: 2px; }
 .rq-text { font-size: 0.875rem; color: var(--slate); line-height: 1.65; }
 
-/* PROJECTS */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-}
-.project-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 1.5rem;
-  display: flex; flex-direction: column;
-  transition: border-color 0.2s, transform 0.2s;
-}
+.projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.project-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column; transition: border-color 0.2s, transform 0.2s; }
 .project-card:hover { border-color: var(--teal-mid); transform: translateY(-2px); }
-.project-badge {
-  display: inline-block;
-  font-family: 'DM Mono', monospace;
-  font-size: 0.62rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 100px;
-  margin-bottom: 1rem;
-  width: fit-content;
-}
+.project-badge { display: inline-block; font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; margin-bottom: 1rem; width: fit-content; }
 .badge-real { background: var(--teal-light); color: #0f6e56; border: 1px solid var(--teal-mid); }
 .badge-demo { background: #eeedfe; color: #3c3489; border: 1px solid #afa9ec; }
-.project-title {
-  font-family: 'Fraunces', serif;
-  font-size: 1rem;
-  font-weight: 400;
-  color: var(--navy);
-  margin-bottom: 0.5rem;
-  line-height: 1.3;
-}
+.project-title { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 400; color: var(--navy); margin-bottom: 0.5rem; line-height: 1.3; }
 .project-desc { font-size: 0.8rem; color: var(--slate); line-height: 1.7; flex: 1; margin-bottom: 1rem; }
 .project-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-.project-tag {
-  font-family: 'DM Mono', monospace;
-  font-size: 0.62rem;
-  background: var(--bg2);
-  color: var(--slate);
-  padding: 3px 8px;
-  border-radius: 4px;
-}
+.project-tag { font-family: 'DM Mono', monospace; font-size: 0.62rem; background: var(--bg2); color: var(--slate); padding: 3px 8px; border-radius: 4px; }
 
-/* EDUCATION */
 .edu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
-.edu-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 1.75rem;
-  transition: border-color 0.2s;
-}
+.edu-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; transition: border-color 0.2s; }
 .edu-card:hover { border-color: var(--teal-mid); }
-.edu-degree {
-  font-family: 'Fraunces', serif;
-  font-size: 1.05rem;
-  font-weight: 400;
-  color: var(--navy);
-  margin-bottom: 6px;
-}
+.edu-degree { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 400; color: var(--navy); margin-bottom: 6px; }
 .edu-school { font-size: 0.85rem; color: var(--teal); font-weight: 500; margin-bottom: 4px; }
 .edu-meta { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--slate-light); }
 
-/* CONTACT */
-.contact-section {
-  background: var(--navy);
-  border-radius: 24px;
-  padding: 4rem 3rem;
-  text-align: center;
-  margin: 0 2.5rem 5rem;
-  max-width: 1100px;
-  margin-left: auto; margin-right: auto;
-  position: relative;
-  overflow: hidden;
-}
-.contact-section::before {
-  content: '';
-  position: absolute;
-  top: -80px; right: -80px;
-  width: 300px; height: 300px;
-  background: radial-gradient(circle, rgba(29,158,117,0.25), transparent 70%);
-  pointer-events: none;
-}
-.contact-headline {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-  font-weight: 300;
-  color: #fff;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.75rem;
-}
+.contact-section { background: var(--navy); border-radius: 24px; padding: 4rem 3rem; text-align: center; margin: 0 2.5rem 5rem; max-width: 1100px; margin-left: auto; margin-right: auto; position: relative; overflow: hidden; }
+.contact-section::before { content: ''; position: absolute; top: -80px; right: -80px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(29,158,117,0.25), transparent 70%); pointer-events: none; }
+.contact-headline { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 300; color: #fff; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
 .contact-sub { font-size: 0.9rem; color: rgba(255,255,255,0.55); max-width: 380px; margin: 0 auto 2.5rem; line-height: 1.75; }
 .contact-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
-.contact-link {
-  font-size: 0.82rem;
-  padding: 0.6rem 1.25rem;
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.15);
-  color: rgba(255,255,255,0.75);
-  text-decoration: none;
-  transition: all 0.2s;
-}
+.contact-link { font-size: 0.82rem; padding: 0.6rem 1.25rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.75); text-decoration: none; transition: all 0.2s; }
 .contact-link:hover { border-color: var(--teal); color: #fff; background: rgba(29,158,117,0.15); }
 
-footer {
-  text-align: center;
-  padding: 2rem;
-  font-family: 'DM Mono', monospace;
-  font-size: 0.7rem;
-  color: var(--slate-light);
-  border-top: 1px solid var(--border);
-}
+footer { text-align: center; padding: 2rem; font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--slate-light); border-top: 1px solid var(--border); }
 
-/* ANIMATIONS */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.hero-left > * {
-  animation: fadeUp 0.6s ease both;
-}
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.hero-left > * { animation: fadeUp 0.6s ease both; }
 .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
 .hero-left > *:nth-child(2) { animation-delay: 0.2s; }
 .hero-left > *:nth-child(3) { animation-delay: 0.25s; }
@@ -648,65 +208,22 @@ footer {
 
 <div id="geo-bg">
 <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1440 900">
-  <defs>
-    <style>
-      .geo { fill: none; stroke-width: 1; }
-      .g1 { stroke: rgba(29,158,117,0.10); }
-      .g2 { stroke: rgba(15,35,65,0.07); }
-      .g3 { fill: rgba(29,158,117,0.04); stroke: none; }
-      .g4 { fill: rgba(15,35,65,0.035); stroke: none; }
-    </style>
-  </defs>
-  <!-- Large circle top right -->
+  <defs><style>.geo{fill:none;stroke-width:1;}.g1{stroke:rgba(29,158,117,0.10);}.g2{stroke:rgba(15,35,65,0.07);}.g3{fill:rgba(29,158,117,0.04);stroke:none;}.g4{fill:rgba(15,35,65,0.035);stroke:none;}</style></defs>
   <circle class="geo g1" cx="1300" cy="-60" r="320"/>
   <circle class="geo g1" cx="1300" cy="-60" r="220"/>
-  <!-- Triangle cluster top right -->
   <polygon class="g3" points="1180,0 1380,0 1280,160"/>
   <polygon class="g4" points="1300,40 1440,40 1440,200 1370,120"/>
-  <!-- Grid dots top area -->
-  <g class="g1">
-    <circle cx="80" cy="80" r="2" fill="rgba(29,158,117,0.15)" stroke="none"/>
-    <circle cx="120" cy="80" r="2" fill="rgba(29,158,117,0.15)" stroke="none"/>
-    <circle cx="160" cy="80" r="2" fill="rgba(29,158,117,0.15)" stroke="none"/>
-    <circle cx="80" cy="120" r="2" fill="rgba(29,158,117,0.15)" stroke="none"/>
-    <circle cx="120" cy="120" r="2" fill="rgba(29,158,117,0.15)" stroke="none"/>
-    <circle cx="160" cy="120" r="2" fill="rgba(29,158,117,0.15)" stroke="none"/>
-    <circle cx="80" cy="160" r="2" fill="rgba(29,158,117,0.15)" stroke="none"/>
-    <circle cx="120" cy="160" r="2" fill="rgba(29,158,117,0.15)" stroke="none"/>
-    <circle cx="160" cy="160" r="2" fill="rgba(29,158,117,0.15)" stroke="none"/>
-    <circle cx="200" cy="80" r="2" fill="rgba(29,158,117,0.15)" stroke="none"/>
-    <circle cx="200" cy="120" r="2" fill="rgba(29,158,117,0.15)" stroke="none"/>
-    <circle cx="200" cy="160" r="2" fill="rgba(29,158,117,0.15)" stroke="none"/>
-  </g>
-  <!-- Diagonal lines left side -->
   <line class="geo g2" x1="-40" y1="300" x2="200" y2="60"/>
   <line class="geo g2" x1="-40" y1="380" x2="240" y2="100"/>
-  <line class="geo g2" x1="-40" y1="460" x2="180" y2="240"/>
-  <!-- Hexagon outline mid left -->
   <polygon class="geo g1" points="60,500 110,470 160,500 160,560 110,590 60,560"/>
-  <polygon class="geo g2" points="40,490 110,448 180,490 180,572 110,614 40,572"/>
-  <!-- Large triangle bottom right -->
   <polygon class="g3" points="1200,800 1440,600 1440,900"/>
-  <polygon class="g4" points="1100,900 1440,680 1440,900"/>
-  <!-- Circle bottom left -->
   <circle class="geo g1" cx="0" cy="900" r="200"/>
-  <circle class="geo g2" cx="0" cy="900" r="280"/>
-  <!-- Small accent squares mid page -->
-  <rect class="g3" x="680" y="380" width="40" height="40" transform="rotate(20,700,400)"/>
-  <rect class="g4" x="720" y="360" width="25" height="25" transform="rotate(45,732,372)"/>
-  <!-- Cross/plus mid right -->
-  <line class="geo g1" x1="1350" y1="450" x2="1350" y2="530"/>
-  <line class="geo g1" x1="1310" y1="490" x2="1390" y2="490"/>
-  <!-- Thin rectangle outline mid area -->
-  <rect class="geo g2" x="20" y="700" width="120" height="60" rx="4"/>
-  <rect class="geo g1" x="35" y="715" width="90" height="30" rx="2"/>
 </svg>
 </div>
 
 <nav>
   <span class="nav-logo">Jeison D. Cuellar</span>
   <div class="nav-links">
-    <a onclick="document.getElementById('achievements').scrollIntoView({behavior:'smooth'})">Achievements</a>
     <a onclick="document.getElementById('experience').scrollIntoView({behavior:'smooth'})">Experience</a>
     <a onclick="document.getElementById('research').scrollIntoView({behavior:'smooth'})">Research</a>
     <a onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">Projects</a>
@@ -715,17 +232,13 @@ footer {
   </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-left">
-      <div class="hero-eyebrow">
-        <div class="hero-dot"></div>
-        <span class="hero-tag">Data Analyst · Sydney, AU</span>
-      </div>
+      <div class="hero-eyebrow"><div class="hero-dot"></div><span class="hero-tag">Data Analyst · Sydney, AU</span></div>
       <h1 class="hero-name">Jeison<br><em>D. Cuellar</em></h1>
-      <p class="hero-subtitle">Reporting · Data Quality · SQL & Python</p>
-      <p class="hero-bio">Detail-oriented Data Analyst with 2+ years of experience in data cleaning, reporting, and data quality management. Proficient in SQL, Python, and R — transforming raw data into clear, actionable insights that drive business decisions. Currently developing research in digital equity and child vulnerability profiling at Western Sydney University.</p>
+      <p class="hero-subtitle">Statistics · Reporting · SQL, Python &amp; R</p>
+      <p class="hero-bio">Statistician with hands-on data analytics experience in Colombia and Australia. Proficient in SQL, Python, and R — turning raw data into clear, actionable insight. Relocated to Australia in 2021 and rebuilt into analytics through further study, an internship, and consulting work — most recently reconciling data systems and building donor segmentation for Carbon Positive Australia.</p>
       <div class="hero-contact">
         <a class="contact-pill" href="mailto:Jeison.cuellar@hotmail.com">✉ Jeison.cuellar@hotmail.com</a>
         <a class="contact-pill" href="https://www.linkedin.com/in/jeison-cuellar-603a11b3/" target="_blank">↗ LinkedIn</a>
@@ -737,64 +250,45 @@ footer {
       </div>
     </div>
     <div class="hero-stats">
-      <div class="stat-card">
-        <div class="stat-num">7+</div>
-        <div class="stat-label">Years of experience</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">166%</div>
-        <div class="stat-label">Model output scaled at Nielsen</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">40%</div>
-        <div class="stat-label">Reporting time saved at CPOA</div>
-      </div>
-      <a class="portfolio-link-badge" href="https://jeisoncuellar.github.io/portfolio/" target="_blank">
-        <span>↗ View Full Portfolio on GitHub</span>
-      </a>
+      <div class="stat-card"><div class="stat-num">2</div><div class="stat-label">Countries · Data roles</div></div>
+      <div class="stat-card"><div class="stat-num">166%</div><div class="stat-label">Model output scaled at Nielsen</div></div>
+      <div class="stat-card"><div class="stat-num">40%</div><div class="stat-label">Reporting time saved at CPOA</div></div>
+      <a class="portfolio-link-badge" href="https://jeisoncuellar.github.io/portfolio/" target="_blank"><span>↗ View Full Portfolio on GitHub</span></a>
     </div>
   </div>
 </div>
 
 <hr class="section-divider" />
 
-<!-- ACHIEVEMENTS -->
 <section id="achievements">
   <div class="section-header">
-    <div class="section-eyebrow">
-      <div class="section-line"></div>
-      <span class="section-label-text">Impact</span>
-    </div>
+    <div class="section-eyebrow"><div class="section-line"></div><span class="section-label-text">Impact</span></div>
     <h2 class="section-title">Key Achievements</h2>
   </div>
   <div class="achievements-grid">
     <div class="achievement-card">
       <div class="achievement-category">Automation & Efficiency</div>
       <div class="achievement-stat">166%</div>
-      <p class="achievement-text">Scaled daily model output from 30 to 80/day at Nielsen by automating ANOVA and regression workflows, with VBA macros cutting manual data prep by ~60% and enabling broader product category coverage.</p>
+      <p class="achievement-text">Scaled daily model output from 30 to 80/day at Nielsen by automating ANOVA and regression workflows, with VBA macros cutting manual data prep by ~60%.</p>
     </div>
     <div class="achievement-card">
       <div class="achievement-category">Data Quality & Reporting</div>
       <div class="achievement-stat">40%</div>
-      <p class="achievement-text">Reduced manual reporting effort at Carbon Positive Australia by integrating and validating WooCommerce and Google Analytics into a single trusted database, with reusable templates the team could use independently.</p>
+      <p class="achievement-text">Reduced manual reporting effort at Carbon Positive Australia by integrating and validating WooCommerce and Google Analytics into a single trusted database.</p>
     </div>
     <div class="achievement-card">
       <div class="achievement-category">Stakeholder Insights</div>
       <div class="achievement-stat">↑</div>
-      <p class="achievement-text">Built donor segmentation profiles by behaviour and motivation, enabling targeted engagement strategies to improve long-term retention across donor categories.</p>
+      <p class="achievement-text">Built donor segmentation profiles by behaviour and motivation, enabling targeted engagement strategies to improve long-term retention.</p>
     </div>
   </div>
 </section>
 
 <hr class="section-divider" />
 
-<!-- EXPERIENCE -->
 <section id="experience">
   <div class="section-header">
-    <div class="section-eyebrow">
-      <div class="section-line"></div>
-      <span class="section-label-text">Work History</span>
-    </div>
+    <div class="section-eyebrow"><div class="section-line"></div><span class="section-label-text">Work History</span></div>
     <h2 class="section-title">Experience</h2>
   </div>
   <div class="exp-list">
@@ -812,24 +306,6 @@ footer {
           <li>Developed reusable reporting templates based on audit findings, allowing the team to work independently after the engagement</li>
           <li>Built donor segmentation profiles by classifying donors based on behaviour and motivations, enabling targeted engagement strategies</li>
           <li>Reduced manual reporting effort by ~40% through automated dashboards and reporting processes</li>
-          <li>Applied data quality assurance, validation, and documented data sources to ensure transparency and reliability</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="exp-card">
-      <div class="exp-meta">
-        <div class="exp-period">2021 – 2025</div>
-        <div class="exp-company">ITSM</div>
-        <div class="exp-location">Sydney, AU</div>
-      </div>
-      <div>
-        <div class="exp-role">Customer Service Operator (Data & Operations)</div>
-        <ul class="exp-bullets">
-          <li>Managed 80–100+ customer enquiries daily across chat and email while maintaining accurate CRM records</li>
-          <li>Analysed enquiry trends and recurring issues, contributing to process improvements that increased customer satisfaction by 20%</li>
-          <li>Maintained and validated customer data, reducing data entry errors by 30% through improved accuracy controls</li>
-          <li>Supported operational reporting by identifying and resolving inconsistencies in CRM data</li>
         </ul>
       </div>
     </div>
@@ -861,97 +337,36 @@ footer {
           <li>Scaled model output by 166% (30 to 80/day) by automating ANOVA and regression workflows in R and SQL</li>
           <li>Reduced manual data prep by ~60% through VBA macros, enabling broader product category coverage daily</li>
           <li>Delivered sales forecasting reports and analytical presentations to data science and stakeholder teams</li>
-          <li>Collaborated with data science teams to ensure accuracy and alignment across workflows</li>
         </ul>
       </div>
     </div>
+  </div>
 
+  <div class="additional-exp">
+    <div class="additional-exp-label">Additional Experience</div>
+    <div class="additional-exp-role">Customer Service Representative — ITSM, Sydney, AU (2021–2025)</div>
+    <div class="additional-exp-note">Worked in customer service after relocating to Australia in 2021, while completing a Diploma in Project Management and rebuilding toward a data analytics career.</div>
   </div>
 </section>
 
 <hr class="section-divider" />
 
-<!-- RESEARCH -->
 <section id="research">
   <div class="section-header">
-    <div class="section-eyebrow">
-      <div class="section-line"></div>
-      <span class="section-label-text">Current Research</span>
-    </div>
-    <h2 class="section-title">Master of Research</h2>
+    <div class="section-eyebrow"><div class="section-line"></div><span class="section-label-text">Research</span></div>
+    <h2 class="section-title">Research Work</h2>
   </div>
 
   <div class="research-featured">
-    <span class="research-tag">In Progress · Western Sydney University</span>
-    <div class="research-title">The Hybrid Digital Agency Index <em>(HDAI)</em></div>
-    <p class="research-problem">
-      Australia became the first country to ban social media for children under 16 — but has no national measure of what digital capability actually looks like in its children, how it develops, or which groups are most at risk. This research builds that measure for the first time, combining longitudinal survey data, Latent Class Analysis, and cross-dataset validation to identify digital vulnerability profiles in Australian children aged 10–15.
-    </p>
-    <div class="research-grid">
-      <div class="research-pill">
-        <div class="research-pill-label">Institution</div>
-        <div class="research-pill-value">Western Sydney University</div>
-      </div>
-      <div class="research-pill">
-        <div class="research-pill-label">Degree</div>
-        <div class="research-pill-value">Master of Research — Social Science</div>
-      </div>
-      <div class="research-pill">
-        <div class="research-pill-label">Data Sources</div>
-        <div class="research-pill-value">LSAC + LSAY (n = 14,000+)</div>
-      </div>
-    </div>
-    <div class="research-methods">
-      <span class="research-method">Latent Class Analysis</span>
-      <span class="research-method">Growth-Curve Modelling</span>
-      <span class="research-method">Composite Index Construction</span>
-      <span class="research-method">Cross-Dataset Validation</span>
-      <span class="research-method">PISA ICT Framework</span>
-      <span class="research-method">R</span>
-      <span class="research-method">Longitudinal Analysis</span>
-    </div>
-  </div>
-
-  <div class="research-questions">
-    <div class="rq-item">
-      <div class="rq-num">RQ1</div>
-      <div class="rq-text">How does digital agency develop across the 10–15 age range in Australian children, and what factors shape it?</div>
-    </div>
-    <div class="rq-item">
-      <div class="rq-num">RQ2</div>
-      <div class="rq-text">What distinct profiles of digital vulnerability emerge when digital agency is combined with socioeconomic status, mental health, and family structure?</div>
-    </div>
-    <div class="rq-item">
-      <div class="rq-num">RQ3</div>
-      <div class="rq-text">Do vulnerability profiles at ages 10–13 predict education and wellbeing outcomes by ages 14–15 and beyond?</div>
-    </div>
-  </div>
-
-  <div style="margin-top: 2.5rem; margin-bottom: 1rem;">
-    <div class="section-eyebrow">
-      <div class="section-line"></div>
-      <span class="section-label-text">Bachelor Degree Thesis</span>
-    </div>
-  </div>
-  <div class="research-featured">
-    <span class="research-tag">Universidad Santo Tomás · Bogotá, Colombia · 2016</span>
+    <span class="research-tag">Bachelor Degree Thesis · Universidad Santo Tomás · Bogotá, Colombia · 2016</span>
     <div class="research-title">Identifying Alcohol Vulnerability Profiles in <em>Colombian Schoolchildren</em></div>
     <p class="research-problem">
       Monthly alcohol prevalence among Colombian secondary school students jumped from 29% to 55% between 2008 and 2015 — but without knowing which students were most at risk and what drove their behaviour, prevention couldn't be targeted. This research built that picture for the first time across two national surveys (n=14,317).
     </p>
     <div class="research-grid">
-      <div class="research-pill">
-        <div class="research-pill-label">Data Sources</div>
-        <div class="research-pill-value">Corporación Nuevos Rumbos 2008 & 2015</div>
-      </div>
-      <div class="research-pill">
-        <div class="research-pill-label">Sample Size</div>
-        <div class="research-pill-value">n = 14,317 schoolchildren</div>
-      </div>
-      <div class="research-pill">
-        <div class="research-pill-label">Outcome</div>
-        <div class="research-pill-value">4 profiles · 80% LCA–Cluster concordance</div>
-      </div>
+      <div class="research-pill"><div class="research-pill-label">Data Sources</div><div class="research-pill-value">Corporación Nuevos Rumbos 2008 & 2015</div></div>
+      <div class="research-pill"><div class="research-pill-label">Sample Size</div><div class="research-pill-value">n = 14,317 schoolchildren</div></div>
+      <div class="research-pill"><div class="research-pill-label">Outcome</div><div class="research-pill-value">4 profiles · 80% LCA–Cluster concordance</div></div>
     </div>
     <div class="research-methods">
       <span class="research-method">Latent Class Analysis</span>
@@ -963,156 +378,124 @@ footer {
       <span class="research-method">R (poLCA)</span>
     </div>
   </div>
+
+  <div style="margin-top: 2.5rem; margin-bottom: 1rem;">
+    <div class="section-eyebrow"><div class="section-line"></div><span class="section-label-text">Self-Directed Proposal</span></div>
+  </div>
+  <div class="research-featured">
+    <span class="research-tag proposal">Independent Research Proposal · Not Pursued (Funding)</span>
+    <div class="research-title">The Hybrid Digital Agency Index <em>(HDAI)</em></div>
+    <p class="research-problem">
+      Australia became the first country to ban social media for children under 16 — but has no national measure of what digital capability actually looks like in its children, how it develops, or which groups are most at risk. This proposal outlined a measure combining longitudinal survey data, Latent Class Analysis, and cross-dataset validation to identify digital vulnerability profiles in Australian children aged 10–15.
+    </p>
+    <p class="research-note">Self-designed as part of a Master of Research application to Western Sydney University. The application did not proceed due to funding constraints, and this remains an independent proposal rather than an enrolled or completed degree.</p>
+    <div class="research-grid">
+      <div class="research-pill"><div class="research-pill-label">Designed For</div><div class="research-pill-value">Western Sydney University</div></div>
+      <div class="research-pill"><div class="research-pill-label">Data Sources (Proposed)</div><div class="research-pill-value">LSAC + LSAY (n = 14,000+)</div></div>
+      <div class="research-pill"><div class="research-pill-label">Status</div><div class="research-pill-value">Proposal only</div></div>
+    </div>
+    <div class="research-methods">
+      <span class="research-method">Latent Class Analysis</span>
+      <span class="research-method">Growth-Curve Modelling</span>
+      <span class="research-method">Composite Index Construction</span>
+      <span class="research-method">Cross-Dataset Validation</span>
+      <span class="research-method">PISA ICT Framework</span>
+      <span class="research-method">R</span>
+    </div>
+  </div>
+
+  <div class="research-questions">
+    <div class="rq-item"><div class="rq-num">RQ1</div><div class="rq-text">How does digital agency develop across the 10–15 age range in Australian children, and what factors shape it?</div></div>
+    <div class="rq-item"><div class="rq-num">RQ2</div><div class="rq-text">What distinct profiles of digital vulnerability emerge when digital agency is combined with socioeconomic status, mental health, and family structure?</div></div>
+    <div class="rq-item"><div class="rq-num">RQ3</div><div class="rq-text">Do vulnerability profiles at ages 10–13 predict education and wellbeing outcomes by ages 14–15 and beyond?</div></div>
+  </div>
 </section>
 
 <hr class="section-divider" />
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="section-header">
-    <div class="section-eyebrow">
-      <div class="section-line"></div>
-      <span class="section-label-text">Work Showcase</span>
-    </div>
+    <div class="section-eyebrow"><div class="section-line"></div><span class="section-label-text">Work Showcase</span></div>
     <h2 class="section-title">Projects</h2>
   </div>
   <div class="projects-grid">
 
-    <div class="project-card" style="border-color: rgba(29,158,117,0.3);">
+    <div class="project-card">
       <span class="project-badge badge-real">Real · Carbon Positive Australia</span>
       <div class="project-title">Rebuilding Reporting Trust After a Data Integration Failure</div>
-      <p class="project-desc"><strong style="color: var(--navy); font-size: 0.78rem;">The problem:</strong> Carbon Positive Australia's revenue and conversion reporting was unreliable — WooCommerce and Google Analytics were out of sync, meaning the team was making fundraising and marketing decisions based on data nobody could fully trust. The root cause had never been investigated.</p>
-      <p class="project-desc" style="margin-top: 0.5rem;"><strong style="color: var(--navy); font-size: 0.78rem;">What I did:</strong> Conducted a full cross-system audit reconciling transaction counts, revenue totals, and event tracking between GA4 and WooCommerce. Identified the integration sync issues causing the discrepancies, validated the corrected data, and built reusable reporting templates the team could use independently — so the fix lasted beyond the engagement.</p>
-      <p class="project-desc" style="margin-top: 0.5rem;"><strong style="color: var(--navy); font-size: 0.78rem;">The outcome:</strong> The organisation gained a single trusted data source for the first time, reducing manual reporting effort by ~40% and giving leadership the confidence to make decisions based on accurate numbers.</p>
-      <div class="project-tags" style="margin-top: 0.75rem;">
-        <span class="project-tag">Python</span>
-        <span class="project-tag">Excel</span>
-        <span class="project-tag">GA4</span>
-        <span class="project-tag">WooCommerce</span>
-        <span class="project-tag">Data Reconciliation</span>
-        <span class="project-tag">Data Governance</span>
-        <span class="project-tag">Reporting Templates</span>
-      </div>
+      <p class="project-desc"><strong style="color: var(--navy); font-size: 0.78rem;">The problem:</strong> WooCommerce and Google Analytics were out of sync, meaning fundraising and marketing decisions relied on data nobody could fully trust.</p>
+      <p class="project-desc"><strong style="color: var(--navy); font-size: 0.78rem;">What I did:</strong> Conducted a full cross-system audit, identified the sync issues, validated corrected data, and built reusable reporting templates.</p>
+      <p class="project-desc"><strong style="color: var(--navy); font-size: 0.78rem;">The outcome:</strong> A single trusted data source, reducing manual reporting effort by ~40%.</p>
+      <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">Excel</span><span class="project-tag">GA4</span><span class="project-tag">WooCommerce</span><span class="project-tag">Data Reconciliation</span></div>
     </div>
-    <div class="project-card" style="border-color: rgba(29,158,117,0.3);">
+
+    <div class="project-card">
       <span class="project-badge badge-real">Real · Nielsen Colombia</span>
       <div class="project-title">Protecting Stakeholder Trust During a Methodology Migration</div>
-      <p class="project-desc"><strong style="color: var(--navy); font-size: 0.78rem;">The problem:</strong> When Nielsen migrated its data collection methodology, historical comparisons risked breaking — meaning major FMCG clients could make commercial decisions based on unreliable trend data. The challenge was to validate the new model against the old, identify where discrepancies existed, and keep reporting trustworthy throughout the transition.</p>
-      <p class="project-desc" style="margin-top: 0.5rem;"><strong style="color: var(--navy); font-size: 0.78rem;">What I did:</strong> Built automated ANOVA and regression workflows in R and SQL that ran parallel validation between both methodologies — scaling model output from 30 to 80/day. Used VBA macros to clean and prepare data, expanding coverage across food product categories and enabling the team to deliver consistent forecasts to the data science team without interruption.</p>
-      <p class="project-desc" style="margin-top: 0.5rem;"><strong style="color: var(--navy); font-size: 0.78rem;">The outcome:</strong> Stakeholders received continuous, trustworthy reporting throughout the transition. No decisions were made on unreliable data.</p>
-      <div class="project-tags" style="margin-top: 0.75rem;">
-        <span class="project-tag">R</span>
-        <span class="project-tag">SQL</span>
-        <span class="project-tag">VBA</span>
-        <span class="project-tag">ANOVA</span>
-        <span class="project-tag">Parallel Validation</span>
-        <span class="project-tag">Data Governance</span>
-        <span class="project-tag">Stakeholder Trust</span>
-      </div>
+      <p class="project-desc"><strong style="color: var(--navy); font-size: 0.78rem;">The problem:</strong> A data collection methodology migration risked breaking historical trend comparisons for major FMCG clients.</p>
+      <p class="project-desc"><strong style="color: var(--navy); font-size: 0.78rem;">What I did:</strong> Built automated ANOVA/regression workflows in R and SQL for parallel validation, scaling model output from 30 to 80/day.</p>
+      <p class="project-desc"><strong style="color: var(--navy); font-size: 0.78rem;">The outcome:</strong> Continuous, trustworthy reporting throughout the transition.</p>
+      <div class="project-tags"><span class="project-tag">R</span><span class="project-tag">SQL</span><span class="project-tag">VBA</span><span class="project-tag">ANOVA</span></div>
     </div>
-    <div class="project-card" style="border-color: rgba(29,158,117,0.3);">
+
+    <div class="project-card">
       <span class="project-badge badge-real">Real · Carbon Positive Australia</span>
-      <div class="project-title">Donor Segmentation: Building a Communication Framework for CPOA</div>
-      <p class="project-desc"><strong style="color: var(--navy); font-size: 0.78rem;">The problem:</strong> Carbon Positive Australia was struggling to maintain and grow donor engagement — not because donors weren't interested, but because CPOA had no way to understand who they were communicating with. Without a clear picture of their donor base, every message went to everyone the same way, making it impossible to communicate accurately or meaningfully.</p>
-      <p class="project-desc" style="margin-top: 0.5rem;"><strong style="color: var(--navy); font-size: 0.78rem;">What I did:</strong> Analysed the donor CRM database using Python and R to build structured profiles based on donation behaviour, frequency, recency, and motivation. Classified donors into distinct segments — each with a clear identity, engagement pattern, and communication need — giving CPOA the tool they were missing to understand exactly who they were talking to.</p>
-      <p class="project-desc" style="margin-top: 0.5rem;"><strong style="color: var(--navy); font-size: 0.78rem;">The outcome:</strong> CPOA gained a clear segmentation framework that allowed them to tailor their messaging to each donor type — moving from one-size-fits-all communication to targeted, accurate outreach that matched each donor's motivations and relationship with the organisation.</p>
-      <div class="project-tags" style="margin-top: 0.75rem;">
-        <span class="project-tag">Python</span>
-        <span class="project-tag">R</span>
-        <span class="project-tag">CRM Analytics</span>
-        <span class="project-tag">Segmentation</span>
-        <span class="project-tag">Donor Profiling</span>
-        <span class="project-tag">Lifecycle Mapping</span>
-      </div>
+      <div class="project-title">Donor Segmentation: Building a Communication Framework</div>
+      <p class="project-desc"><strong style="color: var(--navy); font-size: 0.78rem;">The problem:</strong> CPOA had no way to understand who they were communicating with, so every donor got the same message.</p>
+      <p class="project-desc"><strong style="color: var(--navy); font-size: 0.78rem;">What I did:</strong> Built structured donor profiles in Python and R based on donation behaviour, frequency, recency, and motivation.</p>
+      <p class="project-desc"><strong style="color: var(--navy); font-size: 0.78rem;">The outcome:</strong> A segmentation framework enabling targeted, accurate outreach.</p>
+      <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">R</span><span class="project-tag">CRM Analytics</span><span class="project-tag">Segmentation</span></div>
+    </div>
+
+    <div class="project-card" style="border-style: dashed;">
+      <span class="project-badge badge-demo">Demo · In Progress</span>
+      <div class="project-title">Retail Analytics — Controlled Experiment</div>
+      <p class="project-desc">Space reserved for your Quantium Forage simulation write-up once complete — EDA + test/control store experiment design.</p>
+      <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">Experiment Design</span></div>
     </div>
   </div>
 </section>
 
 <hr class="section-divider" />
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="section-header">
-    <div class="section-eyebrow">
-      <div class="section-line"></div>
-      <span class="section-label-text">Toolkit</span>
-    </div>
+    <div class="section-eyebrow"><div class="section-line"></div><span class="section-label-text">Toolkit</span></div>
     <h2 class="section-title">Skills</h2>
   </div>
   <div class="skills-grid">
     <div class="skill-group">
       <div class="skill-group-label">Core Languages & Tools</div>
-      <div class="skill-tags">
-        <span class="skill-tag highlight">SQL</span>
-        <span class="skill-tag highlight">Python</span>
-        <span class="skill-tag highlight">R</span>
-        <span class="skill-tag highlight">Excel</span>
-        <span class="skill-tag">VBA</span>
-        <span class="skill-tag">SAS</span>
-        <span class="skill-tag">SPSS</span>
-        <span class="skill-tag">STATA</span>
-      </div>
+      <div class="skill-tags"><span class="skill-tag highlight">SQL</span><span class="skill-tag highlight">Python</span><span class="skill-tag highlight">R</span><span class="skill-tag highlight">Excel</span><span class="skill-tag">VBA</span><span class="skill-tag">SAS</span><span class="skill-tag">SPSS</span><span class="skill-tag">STATA</span></div>
     </div>
     <div class="skill-group">
       <div class="skill-group-label">Data Visualisation</div>
-      <div class="skill-tags">
-        <span class="skill-tag highlight">Tableau</span>
-        <span class="skill-tag highlight">Power BI</span>
-        <span class="skill-tag">ggplot2</span>
-        <span class="skill-tag">Shiny</span>
-        <span class="skill-tag">Excel Charts</span>
-      </div>
+      <div class="skill-tags"><span class="skill-tag highlight">Tableau</span><span class="skill-tag highlight">Power BI</span><span class="skill-tag">ggplot2</span><span class="skill-tag">Shiny</span></div>
     </div>
     <div class="skill-group">
       <div class="skill-group-label">Statistical Analysis</div>
-      <div class="skill-tags">
-        <span class="skill-tag">ANOVA</span>
-        <span class="skill-tag">Regression</span>
-        <span class="skill-tag">Time Series</span>
-        <span class="skill-tag">Hypothesis Testing</span>
-        <span class="skill-tag">Cluster Analysis</span>
-        <span class="skill-tag">LCA</span>
-      </div>
+      <div class="skill-tags"><span class="skill-tag">ANOVA</span><span class="skill-tag">Regression</span><span class="skill-tag">Time Series</span><span class="skill-tag">Hypothesis Testing</span><span class="skill-tag">Cluster Analysis</span><span class="skill-tag">LCA</span></div>
     </div>
     <div class="skill-group">
       <div class="skill-group-label">Data & Soft Skills</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Data Validation</span>
-        <span class="skill-tag">Data Auditing</span>
-        <span class="skill-tag">CRM Analytics</span>
-        <span class="skill-tag">Stakeholder Communication</span>
-        <span class="skill-tag">Process Improvement</span>
-      </div>
+      <div class="skill-tags"><span class="skill-tag">Data Validation</span><span class="skill-tag">Data Auditing</span><span class="skill-tag">CRM Analytics</span><span class="skill-tag">Stakeholder Communication</span></div>
     </div>
   </div>
 </section>
 
 <hr class="section-divider" />
 
-<!-- EDUCATION -->
 <section>
   <div class="section-header">
-    <div class="section-eyebrow">
-      <div class="section-line"></div>
-      <span class="section-label-text">Education</span>
-    </div>
+    <div class="section-eyebrow"><div class="section-line"></div><span class="section-label-text">Education</span></div>
     <h2 class="section-title">Qualifications</h2>
   </div>
   <div class="edu-grid">
-    <div class="edu-card">
-      <div class="edu-degree">Bachelor's Degree in Statistics</div>
-      <div class="edu-school">Universidad Santo Tomás</div>
-      <div class="edu-meta">2016 · Bogotá, Colombia</div>
-    </div>
-    <div class="edu-card">
-      <div class="edu-degree">Diploma in Project Management</div>
-      <div class="edu-school">Australian Pacific College</div>
-      <div class="edu-meta">2020 · Sydney, AU</div>
-    </div>
+    <div class="edu-card"><div class="edu-degree">Bachelor's Degree in Statistics</div><div class="edu-school">Universidad Santo Tomás</div><div class="edu-meta">2016 · Bogotá, Colombia</div></div>
+    <div class="edu-card"><div class="edu-degree">Diploma in Project Management</div><div class="edu-school">Australian Pacific College</div><div class="edu-meta">2020 · Sydney, AU</div></div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <div class="contact-section" id="contact">
   <h2 class="contact-headline">Let's work together</h2>
   <p class="contact-sub">Open to data analyst roles focused on reporting, data quality, and business insights. Based in Sydney — available immediately.</p>
